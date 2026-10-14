@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Atlas des Textes — Cartes interactives | VERBUM</title>
+  <meta name="description" content="Atlas interactif de VERBUM : le monde des manuscrits, Qumrân et la mer Morte (11 grottes), la route des traductions de la Bible — cliquez sur les points d'or, l'histoire se pose sur la terre.">
+  <meta name="theme-color" content="#0A0A0F">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/musee.css">
+  <link rel="stylesheet" href="css/galeries.css">
+  <link rel="stylesheet" href="css/atlas.css">
+
+  <meta property="og:title" content="L'Atlas des Textes — Cartes interactives | VERBUM">
+  <meta property="og:description" content="Atlas interactif de VERBUM : le monde des manuscrits, Qumrân et la mer Morte (11 grottes), la route des traductions de la Bible — cliquez sur les points d'or, l'histoire se pose su">
+  <meta property="og:image" content="https://verbum-museum.fr/assets/images/hero-atlas.jpg">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "L'Atlas des Textes — Cartes interactives", "description": "Atlas interactif de VERBUM : le monde des manuscrits, Qumrân et la mer Morte (11 grottes), la route des traductions de la Bible — cliquez sur les points d'or, l'histoire se pose sur la terre.", "url": "https://verbum-museum.fr/atlas.html", "isPartOf": {"@type": "WebSite", "name": "VERBUM — Le Musée Virtuel de la Bible", "url": "https://verbum-museum.fr/"}, "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://verbum-museum.fr/"}, {"@type": "ListItem", "position": 2, "name": "L'Atlas des Textes — Cartes interactives", "item": "https://verbum-museum.fr/atlas.html"}]}}</script>
+</head>
+<body>
+
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="nav-principale">
+    <div class="conteneur-large nav-inner">
+      <a href="index.html" class="logo-verbum" aria-label="VERBUM — accueil">
+        <svg class="monogramme" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#0A0A0F"/>
+          <rect x="3" y="3" width="58" height="58" rx="11" fill="none" stroke="#C9A84C" stroke-width="2"/>
+          <path d="M16 14 L32 50 L48 14 L41.5 14 L32 36 L22.5 14 Z" fill="#C9A84C"/>
+        </svg>
+        <span>
+          VERBUM
+          <span class="slogan">Le Musée Virtuel de la Bible</span>
+        </span>
+      </a>
+
+      <nav class="nav-liens" aria-label="Navigation principale">
+        <a href="index.html#manifeste">Le Musée</a>
+        <a href="frise.html">La Frise</a>
+        <a href="index.html#carte">La Carte</a>
+        <a href="index.html#galeries">Les Galeries</a>
+        <a href="galeries/codex-h.html">Codex H</a>
+        <a href="index.html#visite">Visite guidée</a>
+      <details class="menu-salles">
+          <summary>Les Salles</summary>
+          <div class="menu-salles-panneau">
+            <div>
+              <div class="ms-titre">Salles du récit</div>
+              <a href="livre-or.html">Le Livre d'Or</a>
+              <a href="science.html">La Science du Texte</a>
+              <a href="enigmes.html">Les Énigmes</a>
+              <a href="vrai-faux.html">Vrai ou Faux</a>
+              <a href="voix-monde.html">Les Voix du Monde</a>
+              <a href="jardin-psaumes.html">Le Jardin des Psaumes</a>
+              <a href="art.html">La Lumière des Lettres</a>
+            </div>
+            <div>
+              <div class="ms-titre">Expériences</div>
+              <a href="atlas.html">L'Atlas</a>
+              <a href="tresors.html">Le Cabinet des Trésors</a>
+              <a href="comparateur.html">Le Comparateur</a>
+              <a href="radio.html">La Radio</a>
+              <a href="quiz.html">Le Défi (quiz)</a>
+              <a href="glossaire.html">Le Glossaire</a>
+              <a href="parcours-jeunesse.html">Les Petits Scribes</a>
+              <a href="visite-guidee.html">La Visite guidée</a>
+              <a href="questions.html">Les Questions</a>
+            </div>
+            <div>
+              <div class="ms-titre">La méthode</div>
+              <a href="sources.html">Sources &amp; Défi</a>
+              <a href="colophon.html">Colophon</a>
+              <a href="explorer.html">Le Plan du Musée</a>
+            </div>
+          </div>
+        </details>
+            </nav>
+
+      <a class="bouton-nav" href="explorer.html">Le Plan du Musée</a>
+
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="barre-progression" aria-hidden="true"></div>
+  </header>
+
+  <main id="contenu">
+    <!-- ==================== HÉROS ==================== -->
+    <section class="hero-galerie">
+      <div class="fond-galerie" style="background-image:url('assets/images/hero-atlas.jpg')" aria-hidden="true"></div>
+      <div class="voile-galerie" aria-hidden="true"></div>
+      <div class="conteneur-large contenu-galerie">
+        <div style="width:100%">
+          <div class="numero-galerie">Salles complémentaires</div>
+          <h1>L'Atlas des Textes — <span class="texte-or">la géographie de la transmission</span></h1>
+          <p class="resume-galerie">
+            Un texte a une géographie. Trois <strong>cartes interactives</strong> pour poser l'histoire
+            sur la terre : le monde des manuscrits, les grottes de Qumrân, la route des traductions.
+            <strong>Cliquez sur les points d'or.</strong>
+          </p>
+          <div class="actions-hero">
+            <a class="bouton bouton-principal" href="#carte-monde">
+              <svg class="icone-bouton" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+              Ouvrir la première carte
+            </a>
+            <a class="bouton bouton-secondaire" href="#ecouter-atlas">Les narrations</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== INTRODUCTION ==================== -->
+    <section class="section-galerie" id="introduction">
+      <div class="conteneur-large">
+        <div class="entete-section" data-reveal>
+          <div>
+            <div class="surtitre" style="justify-content:flex-start">Lire une carte comme une preuve</div>
+            <h2 style="text-align:left">La route, <span class="texte-or">pas la légende</span></h2>
+            <p style="text-align:left;max-width:48rem;margin-top:.85rem">
+              Chaque point de ces cartes est un <strong>lieu réel</strong> — fouillé, daté, publié.
+              Les cartes sont schématiques (elles ne prétendent pas à la précision topographique),
+              mais chaque information qu'elles portent est exacte. Là où il s'agit de
+              <strong>tradition</strong> (la Sainte-Baume), la carte le dit.
+            </p>
+          </div>
+          <div data-reveal="zoom" style="margin-top:2.25rem;max-width:52rem">
+            <div class="visuel-document">
+              <img src="assets/images/cartes-anciennes.jpg" alt="Cartes anciennes superposées sur une table de navigation, compas et règle" loading="lazy" width="1000" height="775">
+              <div class="cadre-or" aria-hidden="true"></div>
+            </div>
+            <p class="legende-image">Avant les satellites : la table du navigateur — reconstitution.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CARTE 1 : LE MONDE ==================== -->
+    <section class="section-galerie alternant" id="carte-monde">
+      <div class="conteneur-large">
+        <div class="surtitre">Carte 1 · de Rome à Babylone</div>
+        <h2>Le monde <span class="texte-or">des manuscrits</span></h2>
+        <p class="legende-image" style="margin:.85rem 0 1.85rem">Carte schématique — non à l'échelle. Cliquez sur un point d'or.</p>
+
+        <div class="atlas-carte">
+          <div class="atlas-svg" role="group" aria-label="Carte interactive du monde des manuscrits">
+            <svg viewBox="0 0 1000 640" class="svg-carte" aria-hidden="false" role="img">
+              <title>Carte schématique du monde des manuscrits, de Rome à Babylone</title>
+              <!-- Parchemin -->
+              <rect x="0" y="0" width="1000" height="640" fill="#F1E8D6"/>
+              <rect x="14" y="14" width="972" height="612" fill="none" stroke="#C9A84C" stroke-width="2" opacity=".55"/>
+
+              <!-- Mer Méditerranée -->
+              <path d="M70 300 C 150 260, 240 268, 300 290 C 360 312, 420 300, 480 280 C 540 260, 590 270, 640 300 C 680 322, 690 360, 660 392 C 620 430, 540 430, 470 412 C 400 394, 330 396, 260 380 C 190 364, 110 350, 70 320 Z"
+                    fill="#AFC8CF" stroke="#7FA0AA" stroke-width="2"/>
+              <text x="300" y="345" class="texte-carte-mer">Mer Méditerranée</text>
+
+              <!-- Europe -->
+              <path d="M60 60 L 560 60 L 560 210 C 500 230, 420 220, 360 240 L 330 262 L 316 220 L 296 250 L 280 210 L 240 190 L 180 170 L 120 140 L 60 120 Z"
+                    fill="#E4D7BB" stroke="#B9A67E" stroke-width="2"/>
+              <text x="150" y="105" class="texte-carte-region">EUROPE</text>
+
+              <!-- Italie -->
+              <path d="M330 240 L 352 300 L 372 340 L 360 352 L 342 320 L 322 280 Z"
+                    fill="#E4D7BB" stroke="#B9A67E" stroke-width="2"/>
+              <!-- Grèce -->
+              <path d="M420 228 L 442 252 L 434 272 L 412 262 L 402 242 Z"
+                    fill="#E4D7BB" stroke="#B9A67E" stroke-width="2"/>
+
+              <!-- Asie Mineure -->
+              <path d="M470 180 L 640 170 L 660 230 C 620 250, 560 252, 510 240 L 480 214 Z"
+                    fill="#E4D7BB" stroke="#B9A67E" stroke-width="2"/>
+              <text x="530" y="205" class="texte-carte-region">ASIE MINEURE</text>
+
+              <!-- Levant -->
+              <path d="M640 240 L 700 236 L 710 320 L 700 420 L 668 430 L 646 350 Z"
+                    fill="#E4D7BB" stroke="#B9A67E" stroke-width="2"/>
+
+              <!-- Afrique / Égypte -->
+              <path d="M120 470 L 620 452 L 700 440 L 710 520 C 640 560, 520 580, 380 576 L 180 560 L 110 520 Z"
+                    fill="#E4D7BB" stroke="#B9A67E" stroke-width="2"/>
+              <text x="380" y="530" class="texte-carte-region">AFRIQUE · ÉGYPTE</text>
+              <!-- Nil -->
+              <path d="M660 560 C 648 520, 652 480, 648 452" fill="none" stroke="#7FA0AA" stroke-width="5" stroke-linecap="round"/>
+              <text x="672" y="520" class="texte-carte-mer">Nil</text>
+
+              <!-- Mésopotamie -->
+              <path d="M710 230 L 940 210 L 950 470 L 780 480 L 716 420 Z"
+                    fill="#E4D7BB" stroke="#B9A67E" stroke-width="2"/>
+              <path d="M780 240 C 800 300, 812 360, 830 430" fill="none" stroke="#7FA0AA" stroke-width="5" stroke-linecap="round"/>
+              <path d="M840 232 C 852 300, 856 370, 862 430" fill="none" stroke="#7FA0AA" stroke-width="5" stroke-linecap="round"/>
+              <text x="800" y="330" class="texte-carte-region">MÉSOPOTAMIE</text>
+              <text x="768" y="262" class="texte-carte-mer">Tigre</text>
+              <text x="872" y="256" class="texte-carte-mer">Euphrate</text>
+
+              <!-- Arménie -->
+              <path d="M720 120 L 860 110 L 880 180 L 760 200 L 716 170 Z"
+                    fill="#E4D7BB" stroke="#B9A67E" stroke-width="2"/>
+              <text x="762" y="152" class="texte-carte-region">ARMÉNIE</text>
+
+              <!-- Marqueurs -->
+              <g class="marqueur" data-carte="monde" data-lieu="rome" tabindex="0" role="button" aria-label="Rome">
+                <circle cx="318" cy="212" r="11" class="point-or"/><circle cx="318" cy="212" r="18" class="point-halo"/>
+                <text x="300" y="192" class="texte-marqueur">Rome</text>
+              </g>
+              <g class="marqueur" data-carte="monde" data-lieu="sainte-baume" tabindex="0" role="button" aria-label="Sainte-Baume">
+                <circle cx="212" cy="188" r="11" class="point-or"/><circle cx="212" cy="188" r="18" class="point-halo"/>
+                <text x="120" y="172" class="texte-marqueur">Sainte-Baume</text>
+              </g>
+              <g class="marqueur" data-carte="monde" data-lieu="corinthe" tabindex="0" role="button" aria-label="Corinthe">
+                <circle cx="428" cy="252" r="11" class="point-or"/><circle cx="428" cy="252" r="18" class="point-halo"/>
+                <text x="404" y="292" class="texte-marqueur">Corinthe</text>
+              </g>
+              <g class="marqueur" data-carte="monde" data-lieu="ephese" tabindex="0" role="button" aria-label="Éphèse">
+                <circle cx="512" cy="234" r="11" class="point-or"/><circle cx="512" cy="234" r="18" class="point-halo"/>
+                <text x="486" y="272" class="texte-marqueur">Éphèse</text>
+              </g>
+              <g class="marqueur" data-carte="monde" data-lieu="antioche" tabindex="0" role="button" aria-label="Antioche">
+                <circle cx="662" cy="252" r="11" class="point-or"/><circle cx="662" cy="252" r="18" class="point-halo"/>
+                <text x="676" y="240" class="texte-marqueur">Antioche</text>
+              </g>
+              <g class="marqueur" data-carte="monde" data-lieu="jerusalem" tabindex="0" role="button" aria-label="Jérusalem">
+                <circle cx="676" cy="368" r="12" class="point-or point-or-etoile"/><circle cx="676" cy="368" r="20" class="point-halo"/>
+                <text x="694" y="362" class="texte-marqueur">Jérusalem</text>
+              </g>
+              <g class="marqueur" data-carte="monde" data-lieu="qumran" tabindex="0" role="button" aria-label="Qumrân">
+                <circle cx="684" cy="342" r="11" class="point-or"/><circle cx="684" cy="342" r="18" class="point-halo"/>
+                <text x="702" y="330" class="texte-marqueur">Qumrân</text>
+              </g>
+              <g class="marqueur" data-carte="monde" data-lieu="alexandrie" tabindex="0" role="button" aria-label="Alexandrie">
+                <circle cx="632" cy="438" r="11" class="point-or"/><circle cx="632" cy="438" r="18" class="point-halo"/>
+                <text x="536" y="428" class="texte-marqueur">Alexandrie</text>
+              </g>
+              <g class="marqueur" data-carte="monde" data-lieu="babylone" tabindex="0" role="button" aria-label="Babylone">
+                <circle cx="836" cy="356" r="11" class="point-or"/><circle cx="836" cy="356" r="18" class="point-halo"/>
+                <text x="852" y="350" class="texte-marqueur">Babylone</text>
+              </g>
+              <g class="marqueur" data-carte="monde" data-lieu="ecbatane" tabindex="0" role="button" aria-label="Ecbatane">
+                <circle cx="912" cy="262" r="11" class="point-or"/><circle cx="912" cy="262" r="18" class="point-halo"/>
+                <text x="860" y="240" class="texte-marqueur">Ecbatane</text>
+              </g>
+              <g class="marqueur" data-carte="monde" data-lieu="echmiadzin" tabindex="0" role="button" aria-label="Echmiadzin">
+                <circle cx="800" cy="152" r="11" class="point-or"/><circle cx="800" cy="152" r="18" class="point-halo"/>
+                <text x="816" y="146" class="texte-marqueur">Echmiadzin</text>
+              </g>
+            </svg>
+          </div>
+
+          <aside class="atlas-panneau" id="panneau-monde" aria-live="polite">
+            <div class="panneau-date">Sélectionnez un lieu</div>
+            <h3 class="panneau-titre">La carte est interactive</h3>
+            <p class="panneau-texte">Cliquez sur un point d'or — ou utilisez la touche Tabulation puis Entrée — pour découvrir le lieu, sa date, et le lien vers la galerie du musée.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CARTE 2 : QUMRÂN ==================== -->
+    <section class="section-galerie" id="carte-qumran">
+      <div class="conteneur-large">
+        <div class="surtitre">Carte 2 · zoom · la mer Morte</div>
+        <h2>Qumrân — <span class="texte-or">onze grottes, neuf cents manuscrits</span></h2>
+        <p class="legende-image" style="margin:.85rem 0 1.85rem">Carte schématique — non à l'échelle. Chaque grotte révèle son trésor.</p>
+
+        <div class="atlas-carte">
+          <div class="atlas-svg" role="group" aria-label="Carte interactive de Qumrân">
+            <svg viewBox="0 0 1000 560" class="svg-carte" role="img">
+              <title>Carte schématique de Qumrân et des onze grottes</title>
+              <rect x="0" y="0" width="1000" height="560" fill="#F1E8D6"/>
+              <rect x="14" y="14" width="972" height="532" fill="none" stroke="#C9A84C" stroke-width="2" opacity=".55"/>
+
+              <!-- Mer Morte -->
+              <path d="M560 60 C 640 52, 700 90, 710 170 C 720 260, 712 350, 690 430 C 674 486, 640 512, 600 500 C 566 490, 552 440, 552 360 C 552 280, 548 190, 548 120 C 548 86, 552 64, 560 60 Z"
+                    fill="#AFC8CF" stroke="#7FA0AA" stroke-width="2"/>
+              <text x="600" y="290" class="texte-carte-mer" transform="rotate(82 600 290)">Mer Morte · −430 m</text>
+
+              <!-- Plateau / falaises -->
+              <path d="M80 60 L 540 60 C 520 140, 512 240, 516 340 C 520 430, 528 500, 540 520 L 80 520 Z"
+                    fill="#E4D7BB" stroke="#B9A67E" stroke-width="2"/>
+              <path d="M300 80 C 360 120, 420 180, 460 260 C 480 310, 496 380, 504 440" fill="none" stroke="#B9A67E" stroke-width="3" stroke-dasharray="8 8"/>
+              <text x="140" y="96" class="texte-carte-region">DÉSERT DE JUDÉE</text>
+
+              <!-- Route / wadi -->
+              <path d="M120 470 C 220 430, 320 420, 420 430 C 470 436, 500 450, 520 470" fill="none" stroke="#B9A67E" stroke-width="4" stroke-dasharray="10 8"/>
+              <text x="150" y="452" class="texte-carte-mer">Route moderne</text>
+
+              <!-- Marqueurs : village + grottes -->
+              <g class="marqueur" data-carte="qumran" data-lieu="village" tabindex="0" role="button" aria-label="Khirbet Qumrân">
+                <rect x="422" y="286" width="26" height="22" class="point-bati"/>
+                <text x="330" y="280" class="texte-marqueur">Khirbet Qumrân</text>
+              </g>
+              <g class="marqueur" data-carte="qumran" data-lieu="grotte1" tabindex="0" role="button" aria-label="Grotte 1">
+                <circle cx="472" cy="140" r="11" class="point-or"/><circle cx="472" cy="140" r="18" class="point-halo"/>
+                <text x="492" y="136" class="texte-marqueur">Grotte 1</text>
+              </g>
+              <g class="marqueur" data-carte="qumran" data-lieu="grotte2" tabindex="0" role="button" aria-label="Grotte 2">
+                <circle cx="488" cy="188" r="11" class="point-or"/><circle cx="488" cy="188" r="18" class="point-halo"/>
+                <text x="508" y="184" class="texte-marqueur">Grotte 2</text>
+              </g>
+              <g class="marqueur" data-carte="qumran" data-lieu="grotte3" tabindex="0" role="button" aria-label="Grotte 3">
+                <circle cx="498" cy="232" r="11" class="point-or"/><circle cx="498" cy="232" r="18" class="point-halo"/>
+                <text x="518" y="228" class="texte-marqueur">Grotte 3</text>
+              </g>
+              <g class="marqueur" data-carte="qumran" data-lieu="grotte4" tabindex="0" role="button" aria-label="Grotte 4">
+                <circle cx="470" cy="352" r="12" class="point-or point-or-etoile"/><circle cx="470" cy="352" r="20" class="point-halo"/>
+                <text x="386" y="348" class="texte-marqueur">Grotte 4</text>
+              </g>
+              <g class="marqueur" data-carte="qumran" data-lieu="grotte11" tabindex="0" role="button" aria-label="Grotte 11">
+                <circle cx="484" cy="420" r="11" class="point-or"/><circle cx="484" cy="420" r="18" class="point-halo"/>
+                <text x="502" y="428" class="texte-marqueur">Grotte 11</text>
+              </g>
+              <!-- Autres grottes (non interactives) -->
+              <g class="grottes-secondaires" aria-hidden="true">
+                <circle cx="478" cy="164" r="5" class="point-mini"/><circle cx="492" cy="208" r="5" class="point-mini"/>
+                <circle cx="462" cy="380" r="5" class="point-mini"/><circle cx="476" cy="398" r="5" class="point-mini"/>
+                <circle cx="488" cy="442" r="5" class="point-mini"/><circle cx="466" cy="462" r="5" class="point-mini"/>
+                <text x="410" y="500" class="texte-marqueur" style="font-size:13px">5 · 6 · 7 · 8 · 9 · 10</text>
+              </g>
+            </svg>
+          </div>
+
+          <aside class="atlas-panneau" id="panneau-qumran" aria-live="polite">
+            <div class="panneau-date">Sélectionnez une grotte</div>
+            <h3 class="panneau-titre">Onze portes sur le désert</h3>
+            <p class="panneau-texte">En 1947, des bédouins découvrent les premiers rouleaux. Découvrez ce que chaque grotte a livré au monde.</p>
+          </aside>
+        </div>
+
+        <!-- Vues -->
+        <div class="documents-vitrine" style="margin-top:2.85rem">
+          <article class="carte-document" data-reveal>
+            <img src="assets/images/vue-mediterranee.jpg" alt="Navire marchand antique sur la Méditerranée au crépuscule, route des traductions" loading="lazy" width="1000" height="775">
+            <div class="corps-carte">
+              <div class="date-document">La route maritime</div>
+              <h3>D'Alexandrie à Rome par la mer</h3>
+              <p>Les papyrus ont voyagé par bateau : la Septante gagne la Méditerranée, les codex grecs remontent vers Rome, la Peshitta suit les routes caravanières. La mer est la première autoroute du texte.</p>
+            </div>
+          </article>
+          <article class="carte-document" data-reveal>
+            <img src="assets/images/vue-mer-morte.jpg" alt="Vue aérienne de la mer Morte au lever du soleil, falaises et formations salines" loading="lazy" width="1000" height="775">
+            <div class="corps-carte">
+              <div class="date-document">Mer Morte · −430 m</div>
+              <h3>Le plus bas désert du monde</h3>
+              <p>L'aridité extrême a fait office de conservateur : peaux de cuivre et parchemins ont survécu deux millénaires dans l'obscurité sèche des grottes.</p>
+            </div>
+          </article>
+          <article class="carte-document" data-reveal>
+            <img src="assets/images/vue-aerienne-qumran.jpg" alt="Site archéologique de Qumrân au-dessus de la mer Morte" loading="lazy" width="1000" height="775">
+            <div class="corps-carte">
+              <div class="date-document">Khirbet Qumrân</div>
+              <h3>Le village des sectaires</h3>
+              <p>Bassins rituels, scriptorium, cimetière : la communauté de Qumrân a vécu sa foi dans une exigence d'une pureté extrême — et a écrit.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CARTE 3 : ROUTE DES TRADUCTIONS ==================== -->
+    <section class="section-galerie alternant" id="carte-route">
+      <div class="conteneur-large">
+        <div class="surtitre">Carte 3 · itinéraire schématique</div>
+        <h2>La route <span class="texte-or">des traductions</span></h2>
+        <p class="legende-image" style="margin:.85rem 0 1.85rem">Itinéraire schématique — neuf stations, neuf langues. Cliquez sur une station.</p>
+
+        <div class="atlas-carte atlas-carte-route">
+          <div class="atlas-svg" role="group" aria-label="Carte interactive de la route des traductions">
+            <svg viewBox="0 0 1000 360" class="svg-carte" role="img">
+              <title>Itinéraire schématique de la route des traductions de la Bible</title>
+              <rect x="0" y="0" width="1000" height="360" fill="#F1E8D6"/>
+              <rect x="14" y="14" width="972" height="332" fill="none" stroke="#C9A84C" stroke-width="2" opacity=".55"/>
+
+              <!-- Ligne de route -->
+              <path d="M70 200 C 200 120, 320 120, 430 190 C 540 260, 660 250, 780 170 C 860 120, 910 120, 950 150"
+                    fill="none" stroke="#C9A84C" stroke-width="5" stroke-dasharray="2 12" stroke-linecap="round"/>
+
+              <g class="marqueur" data-carte="route" data-lieu="r-jerusalem" tabindex="0" role="button" aria-label="Jérusalem, hébreu">
+                <circle cx="70" cy="200" r="12" class="point-or"/><circle cx="70" cy="200" r="19" class="point-halo"/>
+                <text x="46" y="246" class="texte-marqueur">Jérusalem</text>
+                <text x="34" y="268" class="texte-marqueur-date">av. −450</text>
+              </g>
+              <g class="marqueur" data-carte="route" data-lieu="r-alexandrie" tabindex="0" role="button" aria-label="Alexandrie, grec">
+                <circle cx="210" cy="140" r="12" class="point-or"/><circle cx="210" cy="140" r="19" class="point-halo"/>
+                <text x="176" y="112" class="texte-marqueur">Alexandrie</text>
+                <text x="178" y="92" class="texte-marqueur-date">av. −250</text>
+              </g>
+              <g class="marqueur" data-carte="route" data-lieu="r-edesse" tabindex="0" role="button" aria-label="Édesse, syriaque">
+                <circle cx="352" cy="148" r="12" class="point-or"/><circle cx="352" cy="148" r="19" class="point-halo"/>
+                <text x="322" y="120" class="texte-marqueur">Édesse</text>
+                <text x="318" y="100" class="texte-marqueur-date">II<sup>e</sup> s.</text>
+              </g>
+              <g class="marqueur" data-carte="route" data-lieu="r-rome" tabindex="0" role="button" aria-label="Rome, latin">
+                <circle cx="430" cy="190" r="12" class="point-or"/><circle cx="430" cy="190" r="19" class="point-halo"/>
+                <text x="404" y="236" class="texte-marqueur">Rome</text>
+                <text x="392" y="258" class="texte-marqueur-date">392-405</text>
+              </g>
+              <g class="marqueur" data-carte="route" data-lieu="r-echmiadzin" tabindex="0" role="button" aria-label="Echmiadzin, arménien">
+                <circle cx="566" cy="228" r="12" class="point-or"/><circle cx="566" cy="228" r="19" class="point-halo"/>
+                <text x="530" y="274" class="texte-marqueur">Echmiadzin</text>
+                <text x="548" y="296" class="texte-marqueur-date">405</text>
+              </g>
+              <g class="marqueur" data-carte="route" data-lieu="r-axoum" tabindex="0" role="button" aria-label="Axoum, éthiopien">
+                <circle cx="700" cy="236" r="12" class="point-or"/><circle cx="700" cy="236" r="19" class="point-halo"/>
+                <text x="676" y="282" class="texte-marqueur">Axoum</text>
+                <text x="662" y="304" class="texte-marqueur-date">IV<sup>e</sup> s.</text>
+              </g>
+              <g class="marqueur" data-carte="route" data-lieu="r-moravie" tabindex="0" role="button" aria-label="Moravie, slavon">
+                <circle cx="812" cy="160" r="12" class="point-or"/><circle cx="812" cy="160" r="19" class="point-halo"/>
+                <text x="778" y="128" class="texte-marqueur">Moravie</text>
+                <text x="784" y="108" class="texte-marqueur-date">863</text>
+              </g>
+              <g class="marqueur" data-carte="route" data-lieu="r-maurienne" tabindex="0" role="button" aria-label="Saint-Jean-de-Maurienne, codex H">
+                <circle cx="884" cy="182" r="12" class="point-or"/><circle cx="884" cy="182" r="19" class="point-halo"/>
+                <text x="796" y="226" class="texte-marqueur">St-Jean-de-Maurienne</text>
+                <text x="846" y="248" class="texte-marqueur-date">VI<sup>e</sup>-VII<sup>e</sup> s.</text>
+              </g>
+              <g class="marqueur" data-carte="route" data-lieu="r-paris" tabindex="0" role="button" aria-label="Paris, français">
+                <circle cx="950" cy="150" r="12" class="point-or"/><circle cx="950" cy="150" r="19" class="point-halo"/>
+                <text x="912" y="122" class="texte-marqueur">Paris</text>
+                <text x="892" y="102" class="texte-marqueur-date">1535 · 1880</text>
+              </g>
+            </svg>
+          </div>
+
+          <aside class="atlas-panneau" id="panneau-route" aria-live="polite">
+            <div class="panneau-date">Sélectionnez une station</div>
+            <h3 class="panneau-titre">Neuf langues, une même route</h3>
+            <p class="panneau-texte">De l'hébreu au français, chaque station est une langue — et un peuple qui a voulu lire le texte dans la sienne.</p>
+          </aside>
+        </div>
+
+        <!-- Vues + audio -->
+        <div class="entete-document" style="margin-top:3.25rem">
+          <div data-reveal="gauche">
+            <div class="surtitre">L'extrémité provençale</div>
+            <h2>De Qumrân <span class="texte-or">à la Sainte-Baume</span></h2>
+            <div class="resume-long" style="margin-top:1.35rem">
+              <p>
+                Toute route a son terme. Selon la <strong>tradition</strong> — le musée la distingue
+                toujours du témoignage — la route de
+                <a href="galeries/marie-madeleine.html">Marie-Madeleine</a> s'achève en Provence :
+                la montagne de calcaire, la forêt de chênes verts, la grotte de l'ermite. Les cartes
+                ont ce privilège : elles montrent aussi les chemins de la <strong>mémoire</strong>,
+                pas seulement ceux de la preuve.
+              </p>
+            </div>
+          </div>
+          <div data-reveal="zoom">
+            <div class="visuel-document">
+              <img src="assets/images/vue-provence.jpg" alt="Crête calcaire de la Sainte-Baume en Provence à l'heure dorée" loading="lazy" width="1000" height="775">
+              <div class="cadre-or" aria-hidden="true"></div>
+            </div>
+            <p class="legende-image">La Sainte-Baume, Provence — tradition.</p>
+          </div>
+        </div>
+
+        <!-- Audio -->
+        <div id="ecouter-atlas" style="margin-top:3.25rem;max-width:54rem" data-reveal>
+          <div class="surtitre">Écouter l'Atlas</div>
+          <h3 style="margin:.35rem 0 1.15rem">La route des manuscrits — quatre narrations</h3>
+          <div class="playlist-audio">
+            <button class="piste-audio" data-audio-src="assets/audio/narration-atlas-1.mp3">
+              <span class="icone-lecture"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+              <span class="infos-audio">
+                <strong>1. Pourquoi une carte ? La géographie des preuves</strong>
+                <span>Narration · ≈ 1 min 25</span>
+              </span>
+              <span class="onde" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+            </button>
+            <button class="piste-audio" data-audio-src="assets/audio/narration-atlas-2.mp3">
+              <span class="icone-lecture"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+              <span class="infos-audio">
+                <strong>2. La mer Morte, berceau des manuscrits</strong>
+                <span>Narration · ≈ 1 min 25</span>
+              </span>
+              <span class="onde" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+            </button>
+            <button class="piste-audio" data-audio-src="assets/audio/narration-atlas-3.mp3">
+              <span class="icone-lecture"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+              <span class="infos-audio">
+                <strong>3. La route des traductions — neuf stations</strong>
+                <span>Narration · ≈ 1 min 55</span>
+              </span>
+              <span class="onde" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+            </button>
+            <button class="piste-audio" data-audio-src="assets/audio/narration-atlas-4.mp3">
+              <span class="icone-lecture"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+              <span class="infos-audio">
+                <strong>4. L'extrémité provençale — mémoire et tradition</strong>
+                <span>Narration · ≈ 1 min 25</span>
+              </span>
+              <span class="onde" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+            </button>
+          </div>
+          <div class="barre-audio-globale" aria-hidden="true"><div id="audio-progression"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <section class="section" style="padding-block:var(--espace-l)">
+      <div class="conteneur-large">
+        <div class="nav-galeries">
+          <a class="lien-galerie" href="galeries/qumran.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>
+            <span>
+              <span class="direction">La galerie phare derrière la carte 2</span>
+              <span class="titre-lien">III. Les Manuscrits du Désert</span>
+            </span>
+          </a>
+          <a class="lien-galerie" href="galeries/traductions.html" style="text-align:right">
+            <span>
+              <span class="direction">Les étapes de la carte 3, en détail</span>
+              <span class="titre-lien">VII. Les Traductions</span>
+            </span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PIED DE PAGE ==================== -->
+  <footer class="pied-de-page">
+    <div class="conteneur-large">
+      <div class="repertoire-pied">
+        <div>
+          <h4>Le parcours</h4>
+          <a href="frise.html">La Grande Frise</a>
+          <a href="index.html#galeries">Les 11 Galeries</a>
+          <a href="galeries/codex-h.html">Le Codex H — 2026</a>
+          <a href="galeries/paul.html">Le Dossier Paul</a>
+          <a href="galeries/marie-madeleine.html">Le Dossier Marie-Madeleine</a>
+        </div>
+        <div>
+          <h4>Salles du récit</h4>
+          <a href="livre-or.html">Le Livre d'Or des Découvertes</a>
+          <a href="science.html">La Science du Texte</a>
+          <a href="enigmes.html">Les Énigmes du Texte</a>
+          <a href="vrai-faux.html">Vrai ou Faux</a>
+          <a href="voix-monde.html">Les Voix du Monde</a>
+          <a href="jardin-psaumes.html">Le Jardin des Psaumes</a>
+          <a href="art.html">La Lumière des Lettres</a>
+        </div>
+        <div>
+          <h4>Expériences</h4>
+          <a href="atlas.html">L'Atlas des Textes</a>
+          <a href="tresors.html">Le Cabinet des Trésors</a>
+          <a href="comparateur.html">Le Comparateur</a>
+          <a href="radio.html">La Radio de VERBUM</a>
+          <a href="quiz.html">Le Défi (quiz)</a>
+          <a href="glossaire.html">Le Glossaire</a>
+          <a href="parcours-jeunesse.html">L'Expédition des Petits Scribes</a>
+          <a href="visite-guidee.html">La Visite guidée</a>
+          <a href="questions.html">La Salle des Questions</a>
+        </div>
+        <div>
+          <h4>La méthode</h4>
+          <a href="sources.html">Sources &amp; Défi</a>
+          <a href="colophon.html">Colophon &amp; mentions</a>
+          <a href="explorer.html">Le Plan du Musée</a>
+        </div>
+      </div>
+      <div class="baseline-pied" style="border-top:0;padding-top:0">
+        <span>© <span id="annee-courante">2026</span> VERBUM — Musée Virtuel de la Bible. Projet éducatif et culturel.</span>
+        <span>Tétragramme traduit par « Jéhovah » · Textes canoniques et apocryphes distingués · Site en français</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+  <script src="js/atlas.js" defer></script>
+  <script src="js/audio-player.js" defer></script>
+</body>
+</html>

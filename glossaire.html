@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Glossaire Vivant | VERBUM — Le Musée Virtuel de la Bible</title>
+  <meta name="description" content="Tétragramme, massorah, niqqud, apocryphe, palimpseste, Septante, Vulgate… les mots essentiels de la transmission biblique, expliqués simplement et reliés aux salles du musée.">
+  <meta name="theme-color" content="#0A0A0F">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/musee.css">
+  <link rel="stylesheet" href="css/galeries.css">
+
+  <meta property="og:title" content="Le Glossaire Vivant | VERBUM">
+  <meta property="og:description" content="Tétragramme, massorah, niqqud, apocryphe, palimpseste, Septante, Vulgate… les mots essentiels de la transmission biblique, expliqués simplement et reliés aux salles du musée.">
+  <meta property="og:image" content="https://verbum-museum.fr/assets/images/hero-glossaire.jpg">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Le Glossaire Vivant", "description": "Tétragramme, massorah, niqqud, apocryphe, palimpseste, Septante, Vulgate… les mots essentiels de la transmission biblique, expliqués simplement et reliés aux salles du musée.", "url": "https://verbum-museum.fr/glossaire.html", "isPartOf": {"@type": "WebSite", "name": "VERBUM — Le Musée Virtuel de la Bible", "url": "https://verbum-museum.fr/"}, "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://verbum-museum.fr/"}, {"@type": "ListItem", "position": 2, "name": "Le Glossaire Vivant", "item": "https://verbum-museum.fr/glossaire.html"}]}}</script>
+</head>
+<body>
+
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="nav-principale">
+    <div class="conteneur-large nav-inner">
+      <a href="index.html" class="logo-verbum" aria-label="VERBUM — accueil">
+        <svg class="monogramme" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#0A0A0F"/>
+          <rect x="3" y="3" width="58" height="58" rx="11" fill="none" stroke="#C9A84C" stroke-width="2"/>
+          <path d="M16 14 L32 50 L48 14 L41.5 14 L32 36 L22.5 14 Z" fill="#C9A84C"/>
+        </svg>
+        <span>
+          VERBUM
+          <span class="slogan">Le Musée Virtuel de la Bible</span>
+        </span>
+      </a>
+
+      <nav class="nav-liens" aria-label="Navigation principale">
+        <a href="index.html#manifeste">Le Musée</a>
+        <a href="frise.html">La Frise</a>
+        <a href="index.html#carte">La Carte</a>
+        <a href="index.html#galeries">Les Galeries</a>
+        <a href="galeries/codex-h.html">Codex H</a>
+        <a href="index.html#visite">Visite guidée</a>
+      <details class="menu-salles">
+          <summary>Les Salles</summary>
+          <div class="menu-salles-panneau">
+            <div>
+              <div class="ms-titre">Salles du récit</div>
+              <a href="livre-or.html">Le Livre d'Or</a>
+              <a href="science.html">La Science du Texte</a>
+              <a href="enigmes.html">Les Énigmes</a>
+              <a href="vrai-faux.html">Vrai ou Faux</a>
+              <a href="voix-monde.html">Les Voix du Monde</a>
+              <a href="jardin-psaumes.html">Le Jardin des Psaumes</a>
+              <a href="art.html">La Lumière des Lettres</a>
+            </div>
+            <div>
+              <div class="ms-titre">Expériences</div>
+              <a href="atlas.html">L'Atlas</a>
+              <a href="tresors.html">Le Cabinet des Trésors</a>
+              <a href="comparateur.html">Le Comparateur</a>
+              <a href="radio.html">La Radio</a>
+              <a href="quiz.html">Le Défi (quiz)</a>
+              <a href="glossaire.html">Le Glossaire</a>
+              <a href="parcours-jeunesse.html">Les Petits Scribes</a>
+              <a href="visite-guidee.html">La Visite guidée</a>
+              <a href="questions.html">Les Questions</a>
+            </div>
+            <div>
+              <div class="ms-titre">La méthode</div>
+              <a href="sources.html">Sources &amp; Défi</a>
+              <a href="colophon.html">Colophon</a>
+              <a href="explorer.html">Le Plan du Musée</a>
+            </div>
+          </div>
+        </details>
+            </nav>
+
+      <a class="bouton-nav" href="explorer.html">Le Plan du Musée</a>
+
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="barre-progression" aria-hidden="true"></div>
+  </header>
+
+  <main id="contenu">
+    <!-- ==================== HÉROS ==================== -->
+    <section class="hero-galerie">
+      <div class="fond-galerie" style="background-image:url('assets/images/hero-glossaire.jpg')" aria-hidden="true"></div>
+      <div class="voile-galerie" aria-hidden="true"></div>
+      <div class="conteneur-large contenu-galerie">
+        <div style="width:100%">
+          <div class="numero-galerie">La salle des mots</div>
+          <h1>Le Glossaire <span class="texte-or">Vivant</span></h1>
+          <p class="resume-galerie">
+            Tétragramme, massorah, niqqud, palimpseste… les mots essentiels de la transmission,
+            expliqués simplement — chacun relié à la salle qui l'illustre.
+          </p>
+          <div class="meta-galerie">
+            <span class="badge badge-actualite">23 termes · recherche instantanée</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FIL D'ARIANE ==================== -->
+    <div class="conteneur-large">
+      <nav class="fil-ariane" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="sep">›</span>
+        <span>Le Glossaire Vivant</span>
+      </nav>
+    </div>
+
+    <!-- ==================== AUDIO + GLOSSAIRE ==================== -->
+    <section class="section-galerie">
+      <div class="conteneur-large">
+        <div style="max-width:54rem;margin-bottom:var(--espace-l)" data-reveal>
+          <div class="playlist-audio">
+            <button class="piste-audio" data-audio-src="assets/audio/narration-glossaire.mp3">
+              <span class="icone-lecture"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+              <span class="infos-audio">
+                <strong>Écouter : les mots pour comprendre</strong>
+                <span>Narration · ≈ 1 min 25</span>
+              </span>
+              <span class="onde" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+            </button>
+          </div>
+          <div class="barre-audio-globale" aria-hidden="true"><div id="audio-progression"></div></div>
+        </div>
+
+        <div class="barre-filtres-grande" style="position:static;margin-bottom:1.65rem">
+          <input type="search" id="glossaire-recherche" placeholder="Rechercher un terme… (ex. : tétragramme, papyrus)"
+                 aria-label="Rechercher dans le glossaire"
+                 style="flex:1 1 260px;min-width:220px;padding:.62rem 1.15rem;border-radius:999px;border:1px solid rgba(201,168,76,.35);background:rgba(10,10,15,.65);color:inherit;font-size:.92rem;outline:none">
+          <div id="glossaire-index" style="display:flex;flex-wrap:wrap;gap:.45rem" aria-label="Index alphabétique"></div>
+        </div>
+
+        <div class="grille-preuves" id="glossaire-zone" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+          <!-- Rendu par js/glossaire.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CLÔTURE ==================== -->
+    <section class="section" style="background:var(--bleu-abysse)">
+      <div class="conteneur" style="text-align:center">
+        <div data-reveal>
+          <h2>Les mots, eux aussi, <span class="texte-or">se transmettent</span></h2>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.15rem">
+            <a class="bouton bouton-primaire" href="tresors.html">Le Cabinet des Trésors</a>
+            <a class="bouton bouton-secondaire" href="sources.html">Sources &amp; Méthode</a>
+            <a class="bouton bouton-secondaire" href="quiz.html">Relever le Défi</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PIED DE PAGE ==================== -->
+  <footer class="pied-de-page">
+    <div class="conteneur-large">
+      <div class="repertoire-pied">
+        <div>
+          <h4>Le parcours</h4>
+          <a href="frise.html">La Grande Frise</a>
+          <a href="index.html#galeries">Les 11 Galeries</a>
+          <a href="galeries/codex-h.html">Le Codex H — 2026</a>
+          <a href="galeries/paul.html">Le Dossier Paul</a>
+          <a href="galeries/marie-madeleine.html">Le Dossier Marie-Madeleine</a>
+        </div>
+        <div>
+          <h4>Salles du récit</h4>
+          <a href="livre-or.html">Le Livre d'Or des Découvertes</a>
+          <a href="science.html">La Science du Texte</a>
+          <a href="enigmes.html">Les Énigmes du Texte</a>
+          <a href="vrai-faux.html">Vrai ou Faux</a>
+          <a href="voix-monde.html">Les Voix du Monde</a>
+          <a href="jardin-psaumes.html">Le Jardin des Psaumes</a>
+          <a href="art.html">La Lumière des Lettres</a>
+        </div>
+        <div>
+          <h4>Expériences</h4>
+          <a href="atlas.html">L'Atlas des Textes</a>
+          <a href="tresors.html">Le Cabinet des Trésors</a>
+          <a href="comparateur.html">Le Comparateur</a>
+          <a href="radio.html">La Radio de VERBUM</a>
+          <a href="quiz.html">Le Défi (quiz)</a>
+          <a href="glossaire.html">Le Glossaire</a>
+          <a href="parcours-jeunesse.html">L'Expédition des Petits Scribes</a>
+          <a href="visite-guidee.html">La Visite guidée</a>
+          <a href="questions.html">La Salle des Questions</a>
+        </div>
+        <div>
+          <h4>La méthode</h4>
+          <a href="sources.html">Sources &amp; Défi</a>
+          <a href="colophon.html">Colophon &amp; mentions</a>
+          <a href="explorer.html">Le Plan du Musée</a>
+        </div>
+      </div>
+      <div class="baseline-pied" style="border-top:0;padding-top:0">
+        <span>© <span id="annee-courante">2026</span> VERBUM — Musée Virtuel de la Bible. Projet éducatif et culturel.</span>
+        <span>Tétragramme traduit par « Jéhovah » · Textes canoniques et apocryphes distingués · Site en français</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+  <script src="js/audio-player.js" defer></script>
+  <script src="js/glossaire.js" defer></script>
+</body>
+</html>

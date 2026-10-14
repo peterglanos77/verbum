@@ -1,0 +1,89 @@
+/* ==========================================================================
+   VERBUM — Le Jardin des Psaumes
+   ========================================================================== */
+
+.psaume {
+  padding-block: 2.85rem;
+  border-top: 1px solid rgba(201, 168, 76, .22);
+}
+.psaume:first-of-type { border-top: 0; padding-top: .35rem; }
+
+.psaume-numero {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--or-doux, #D9BC75);
+  letter-spacing: .18em;
+  margin-bottom: .45rem;
+}
+
+.psaume-titre {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: clamp(1.75rem, 3.2vw, 2.45rem);
+  font-weight: 700; line-height: 1.15;
+  color: var(--texte-clair, #E8E0D0);
+  margin: 0 0 .55rem;
+}
+
+.psaume-ref {
+  font-family: 'Inter', sans-serif;
+  font-size: .82rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(201, 168, 76, .75);
+  margin-bottom: 1.45rem;
+}
+
+/* Bloc hébreu */
+.psaume-hebreu {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.32rem;
+  line-height: 2.1;
+  direction: rtl;
+  text-align: right;
+  color: var(--or-pale, #E8D9A8);
+  background: rgba(201, 168, 76, .06);
+  border: 1px solid rgba(201, 168, 76, .28);
+  border-radius: var(--rayon-m, 12px);
+  padding: 1.55rem 1.85rem;
+  max-width: 46rem;
+  margin-bottom: 1.45rem;
+}
+.psaume-hebreu p { margin: 0 0 .65rem; }
+.psaume-hebreu p:last-child { margin-bottom: 0; }
+
+/* Traduction française */
+.psaume-fr {
+  max-width: 46rem;
+  color: rgba(232, 224, 208, .92);
+  font-family: 'EB Garamond', serif;
+  font-size: 1.16rem;
+  line-height: 1.95;
+}
+.psaume-fr p { margin: 0 0 .85rem; padding-left: 1.35rem; text-indent: -1.35rem; }
+.psaume-fr .v {
+  display: inline-block;
+  min-width: 1.9rem;
+  font-family: 'Inter', sans-serif;
+  font-size: .72rem; font-weight: 700;
+  color: var(--or-doux, #D9BC75);
+  vertical-align: .35em;
+  padding-right: .45rem;
+}
+.psaume-fr strong { color: var(--or-pale, #E8D9A8); font-weight: 600; }
+
+/* Visuel du psaume */
+.psaume-visuel {
+  position: relative;
+  margin: 1.85rem 0 .85rem;
+  max-width: 46rem;
+}
+.psaume-visuel img {
+  width: 100%; height: auto;
+  border-radius: var(--rayon-m, 12px);
+  border: 1px solid rgba(201, 168, 76, .4);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, .45);
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .psaume-hebreu { padding: 1.15rem 1.15rem; font-size: 1.16rem; }
+}

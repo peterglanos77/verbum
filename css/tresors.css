@@ -1,0 +1,54 @@
+/* ============================================================
+   VERBUM — Le Cabinet des Trésors · styles
+   ============================================================ */
+.grille-tresors {
+  columns: 3 300px;
+  column-gap: 1.35rem;
+}
+.tresor-item {
+  break-inside: avoid;
+  margin: 0 0 1.35rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(201, 168, 76, .16);
+  cursor: pointer;
+  background: var(--bleu-nuit, #131318);
+}
+.tresor-item img {
+  width: 100%;
+  display: block;
+  transition: transform .9s ease;
+}
+.tresor-item:hover img,
+.tresor-item:focus-visible img { transform: scale(1.06); }
+.tresor-item:focus-visible { outline: 2px solid var(--or, #C9A84C); outline-offset: 3px; }
+.tresor-item figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 2.45rem 1.15rem 1.05rem;
+  background: linear-gradient(180deg, transparent, rgba(10, 10, 15, .92));
+  transform: translateY(12%);
+  opacity: 0;
+  transition: opacity .45s ease, transform .45s ease;
+}
+.tresor-item:hover figcaption,
+.tresor-item:focus-visible figcaption {
+  opacity: 1;
+  transform: none;
+}
+.tresor-item figcaption h4 {
+  margin: 0 0 .35rem;
+  font-size: 1.02rem;
+}
+.tresor-item figcaption p {
+  margin: 0;
+  font-family: var(--police-corps-litteraire, 'EB Garamond', serif);
+  font-size: .95rem;
+  line-height: 1.55;
+  opacity: .85;
+}
+@media (max-width: 640px) {
+  .grille-tresors { columns: 1; }
+  .tresor-item figcaption { opacity: 1; transform: none; }
+}

@@ -1,0 +1,242 @@
+/* ============================================================
+   VERBUM — Spécificités galerie Qumrân
+   Carte des grottes · comparateur · timeline des découvertes
+   ============================================================ */
+
+/* ---------- Données clés (bandeau) ---------- */
+.bandeau-qumran {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 1.15rem;
+  margin: 2.35rem 0 0;
+}
+.case-qumran {
+  text-align: center;
+  padding: 1.55rem 1.15rem;
+  border-radius: var(--rayon-m);
+  background: rgba(10, 10, 15, 0.45);
+  border: var(--bordure-or);
+}
+.case-qumran .grand-chiffre {
+  font-family: var(--font-titre);
+  font-size: clamp(1.95rem, 3.2vw, 2.65rem);
+  background: var(--degrade-or);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.case-qumran .libelle-chiffre {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gris-brume);
+  margin-top: 0.55rem;
+}
+
+/* ---------- Carte des grottes ---------- */
+.carte-grottes {
+  position: relative;
+  border-radius: var(--rayon-l);
+  overflow: hidden;
+  border: var(--bordure-or);
+  box-shadow: var(--ombre-cartes);
+}
+.carte-grottes img {
+  width: 100%;
+  aspect-ratio: 16 / 8.2;
+  object-fit: cover;
+}
+.hotspots-grottes {
+  position: absolute;
+  inset: 0;
+}
+.hotspot-grotte {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--noir-profond);
+  background: var(--degrade-or);
+  border: 2px solid rgba(240, 232, 213, 0.75);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+  transition: transform var(--duree-rapide) var(--ease-sacree), box-shadow var(--duree-rapide);
+}
+.hotspot-grotte:hover, .hotspot-grotte.actif {
+  transform: translate(-50%, -50%) scale(1.22);
+  box-shadow: 0 0 0 6px rgba(201, 168, 76, 0.35), 0 10px 26px rgba(0, 0, 0, 0.6);
+  z-index: 3;
+}
+.hotspot-grotte.actif { background: var(--parchemin); }
+
+.grotte-panneau {
+  margin-top: 1.55rem;
+  padding: 1.85rem 1.95rem;
+  border-radius: var(--rayon-m);
+  background: rgba(13, 27, 42, 0.6);
+  border: var(--bordure-fine);
+}
+.grotte-entete {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1.05rem;
+  margin-bottom: 0.65rem;
+}
+.grotte-numero {
+  font-family: var(--font-titre);
+  font-size: 1.65rem;
+  color: var(--or-clair);
+}
+.grotte-annee {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gris-brume);
+}
+.grotte-tresor {
+  font-family: var(--font-soustitre);
+  font-size: 1.18rem;
+  font-style: italic;
+  color: var(--or-sacre);
+  margin-bottom: 0.55rem;
+}
+.grotte-contenu {
+  font-family: var(--font-ui);
+  font-size: 0.93rem;
+  line-height: 1.8;
+  color: var(--blanc-parchemin);
+}
+
+/* ---------- Comparateur de textes ---------- */
+.comparateur {
+  margin-top: 2.35rem;
+}
+.comparateur-filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 1.35rem;
+}
+.comparateur-grille {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+}
+.colonne-texte {
+  padding: 1.65rem 1.45rem;
+  border-radius: var(--rayon-m);
+  background: rgba(10, 10, 15, 0.5);
+  border: var(--bordure-fine);
+  transition: opacity var(--duree-moyenne), border-color var(--duree-moyenne), transform var(--duree-moyenne) var(--ease-sacree);
+}
+.colonne-texte.colonne-active {
+  border-color: rgba(201, 168, 76, 0.5);
+}
+.colonne-texte:not(.colonne-active) {
+  opacity: 0.28;
+  transform: scale(0.97);
+}
+.colonne-texte .titre-colonne {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--or-sacre);
+  margin-bottom: 1.05rem;
+}
+.colonne-texte .corps-colonne {
+  font-family: var(--font-hebreu);
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  font-size: 1.35rem;
+  line-height: 2.1;
+  color: var(--or-clair);
+  text-align: center;
+}
+.colonne-texte .corps-colonne.francais {
+  font-family: var(--font-corps);
+  direction: ltr;
+  font-style: italic;
+  font-size: 1.12rem;
+  line-height: 1.85;
+  color: var(--parchemin);
+}
+.colonne-texte .sous-colonne {
+  margin-top: 1.05rem;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  line-height: 1.65;
+  color: var(--gris-pierre);
+  text-align: center;
+}
+
+/* ---------- Timeline des découvertes ---------- */
+.timeline-decouvertes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 1.05rem;
+  margin-top: 1.85rem;
+}
+.bloc-deouverte {
+  padding: 1.35rem 1.25rem;
+  border-left: 2px solid var(--or-sacre);
+  background: rgba(10, 10, 15, 0.4);
+  border-radius: 0 var(--rayon-s) var(--rayon-s) 0;
+}
+.bloc-deouverte .annee-decouverte {
+  font-family: var(--font-titre);
+  font-size: 1.32rem;
+  color: var(--or-sacre);
+}
+.bloc-deouverte p {
+  margin-top: 0.45rem;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--gris-brume);
+}
+
+/* ---------- Galerie d'ambiance ---------- */
+.galerie-ambiance {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.15rem;
+  margin-top: 1.85rem;
+}
+.galerie-ambiance figure {
+  margin: 0;
+  border-radius: var(--rayon-m);
+  overflow: hidden;
+  position: relative;
+}
+.galerie-ambiance img {
+  width: 100%;
+  aspect-ratio: 4 / 3.1;
+  object-fit: cover;
+  transition: transform 1.1s var(--ease-sacree);
+}
+.galerie-ambiance figure:hover img { transform: scale(1.08); }
+.galerie-ambiance figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.65rem 1.15rem 0.95rem;
+  background: linear-gradient(180deg, transparent, rgba(10, 10, 15, 0.92));
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--blanc-parchemin);
+}
+
+@media (max-width: 900px) {
+  .comparateur-grille { grid-template-columns: 1fr; }
+  .colonne-texte:not(.colonne-active) { opacity: 1; transform: none; }
+}

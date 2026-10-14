@@ -1,0 +1,216 @@
+/* ============================================================
+   VERBUM — Spécificités galerie Codex H
+   Slider multispectral · étapes techno · dispersion
+   ============================================================ */
+
+/* ---------- Slider avant / après ---------- */
+.slider-multispectral {
+  position: relative;
+  border-radius: var(--rayon-l);
+  overflow: hidden;
+  border: var(--bordure-or);
+  box-shadow: var(--ombre-cartes);
+  user-select: none;
+  touch-action: pan-y;
+}
+.slider-multispectral img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9.5;
+  object-fit: cover;
+  pointer-events: none;
+}
+.slider-couche-apres {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 50% 0 0);
+}
+.slider-couche-apres img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+}
+.slider-poignee {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: var(--or-sacre);
+  box-shadow: 0 0 18px var(--or-lueur);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.slider-poignee::after {
+  content: "⇔";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px; height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--degrade-or);
+  color: var(--noir-profond);
+  font-size: 1.35rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+.slider-etiquette {
+  position: absolute;
+  top: 1.05rem;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.05rem;
+  border-radius: 999px;
+  background: rgba(10, 10, 15, 0.72);
+  border: var(--bordure-fine);
+  color: var(--blanc-parchemin);
+}
+.slider-etiquette.gauche { left: 1.05rem; }
+.slider-etiquette.droite { right: 1.05rem; color: var(--or-clair); border-color: rgba(201, 168, 76, 0.5); }
+
+#slider-curseur {
+  width: 100%;
+  margin-top: 1.15rem;
+  accent-color: var(--or-sacre);
+  cursor: ew-resize;
+}
+
+/* ---------- Étapes technologiques ---------- */
+.etapes-techno {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 1.35rem;
+}
+.etape-bouton {
+  padding: 1.15rem 1.05rem;
+  border-radius: var(--rayon-m);
+  border: var(--bordure-fine);
+  background: rgba(10, 10, 15, 0.45);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--gris-brume);
+  transition: all var(--duree-rapide) var(--ease-sacree);
+}
+.etape-bouton:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+  color: var(--or-clair);
+  transform: translateY(-3px);
+}
+.etape-bouton.actif {
+  background: rgba(201, 168, 76, 0.16);
+  border-color: var(--or-sacre);
+  color: var(--or-clair);
+}
+.etape-bouton .num {
+  display: block;
+  font-family: var(--font-titre);
+  font-size: 1.45rem;
+  color: var(--or-sacre);
+  margin-bottom: 0.35rem;
+}
+#etape-panneau {
+  padding: 1.65rem 1.85rem;
+  border-radius: var(--rayon-m);
+  background: rgba(13, 27, 42, 0.6);
+  border: var(--bordure-fine);
+}
+#etape-panneau h4 {
+  font-family: var(--font-soustitre);
+  font-size: 1.28rem;
+  color: var(--or-clair);
+  margin-bottom: 0.55rem;
+}
+#etape-panneau p {
+  font-family: var(--font-ui);
+  font-size: 0.94rem;
+  line-height: 1.82;
+  color: var(--blanc-parchemin);
+}
+
+/* ---------- Dispersion géographique ---------- */
+.grille-dispersion {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 1.05rem;
+  margin-top: 1.55rem;
+}
+.case-pays {
+  text-align: center;
+  padding: 1.55rem 1.05rem;
+  border-radius: var(--rayon-m);
+  border: var(--bordure-or);
+  background: rgba(10, 10, 15, 0.45);
+  transition: transform var(--duree-moyenne) var(--ease-sacree), box-shadow var(--duree-moyenne);
+}
+.case-pays:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ombre-or);
+}
+.case-pays .drapeau {
+  font-size: 2.15rem;
+  line-height: 1;
+}
+.case-pays .nom-pays {
+  display: block;
+  margin-top: 0.65rem;
+  font-family: var(--font-soustitre);
+  font-size: 1.12rem;
+  color: var(--parchemin);
+}
+.case-pays .detail-pays {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-ui);
+  font-size: 0.76rem;
+  color: var(--gris-brume);
+}
+
+/* ---------- Citation de chercheur ---------- */
+.citation-chercheur {
+  position: relative;
+  margin: 2.35rem 0;
+  padding: 2.35rem 2.35rem 2.15rem;
+  border-radius: var(--rayon-m);
+  background:
+    radial-gradient(ellipse 100% 130% at 20% 0%, rgba(201, 168, 76, 0.12) 0%, transparent 60%),
+    rgba(10, 10, 15, 0.55);
+  border: var(--bordure-or);
+}
+.citation-chercheur .guillemet-cite {
+  font-family: var(--font-titre);
+  font-size: 3.4rem;
+  line-height: 0;
+  color: var(--or-sacre);
+}
+.citation-chercheur blockquote {
+  font-family: var(--font-soustitre);
+  font-size: clamp(1.18rem, 2.1vw, 1.52rem);
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--parchemin);
+}
+.citation-chercheur .source-cite {
+  display: block;
+  margin-top: 1.35rem;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gris-brume);
+}
+
+@media (max-width: 900px) {
+  .etapes-techno { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  .etapes-techno { grid-template-columns: 1fr; }
+}

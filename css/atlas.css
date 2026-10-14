@@ -1,0 +1,120 @@
+/* ==========================================================================
+   VERBUM — Atlas des Textes : cartes interactives
+   ========================================================================== */
+
+/* ==================== MISE EN PAGE DES CARTES ==================== */
+.atlas-carte {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(260px, 1fr);
+  gap: var(--espace-m);
+  align-items: stretch;
+}
+
+.atlas-carte-route { grid-template-columns: minmax(0, 2.6fr) minmax(260px, 1fr); }
+
+.atlas-svg {
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(201, 168, 76, .32);
+  border-radius: var(--rayon-m, 12px);
+  overflow: hidden;
+}
+
+.svg-carte { display: block; width: 100%; height: auto; }
+
+/* ==================== TEXTES DE CARTE ==================== */
+.texte-carte-mer {
+  fill: #4E6E78; font-family: 'EB Garamond', serif; font-size: 17px;
+  font-style: italic; letter-spacing: .04em;
+}
+.texte-carte-region {
+  fill: #A08A5A; font-family: 'Inter', sans-serif; font-size: 13px;
+  font-weight: 700; letter-spacing: .18em; opacity: .75;
+}
+.texte-marqueur {
+  fill: #2A2320; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+}
+.texte-marqueur-date {
+  fill: #8A7342; font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 500;
+}
+
+/* ==================== MARQUEURS ==================== */
+.marqueur { cursor: pointer; outline: none; }
+
+.point-or {
+  fill: #C9A84C; stroke: #8A6E28; stroke-width: 2;
+  transition: transform .25s var(--ease-out, ease), fill .25s ease;
+  transform-box: fill-box; transform-origin: center;
+}
+.point-or-etoile { stroke-width: 2.5; }
+.point-halo {
+  fill: none; stroke: #C9A84C; stroke-width: 1.5; opacity: 0;
+  transition: opacity .25s ease;
+}
+.point-mini { fill: #B8A167; opacity: .55; }
+.point-bati {
+  fill: #8A7342; stroke: #5C4A24; stroke-width: 2;
+}
+
+.marqueur:hover .point-or,
+.marqueur.survol .point-or,
+.marqueur:focus-visible .point-or { fill: #E4C877; transform: scale(1.25); }
+.marqueur:hover .point-halo,
+.marqueur.survol .point-halo,
+.marqueur:focus-visible .point-halo { opacity: .85; }
+.marqueur.actif .point-or { fill: #FFE9A8; stroke: #6E5518; transform: scale(1.3); }
+.marqueur.actif .point-halo { opacity: 1; animation: halo-atlas 1.6s ease-out infinite; }
+.marqueur:focus-visible .point-or { stroke: #2A2320; stroke-width: 3; }
+
+@keyframes halo-atlas {
+  0%   { opacity: .9; transform: scale(1); transform-box: fill-box; transform-origin: center; }
+  100% { opacity: 0;  transform: scale(1.9); transform-box: fill-box; transform-origin: center; }
+}
+
+/* ==================== PANNEAU LATÉRAL ==================== */
+.atlas-panneau {
+  background: rgba(201, 168, 76, .07);
+  border: 1px solid rgba(201, 168, 76, .35);
+  border-radius: var(--rayon-m, 12px);
+  padding: var(--espace-m, 1.65rem);
+  display: flex; flex-direction: column; justify-content: center;
+  min-height: 100%;
+  transition: border-color .3s ease;
+}
+.atlas-panneau.panneau-actif { border-color: rgba(201, 168, 76, .6); }
+
+.panneau-date {
+  font-family: 'Inter', sans-serif; font-size: .78rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--or-doux, #D9BC75); margin-bottom: .65rem;
+}
+.panneau-titre {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: 1.55rem; font-weight: 700; color: var(--or, #C9A84C);
+  margin: 0 0 .85rem; line-height: 1.2;
+}
+.panneau-texte {
+  color: rgba(232, 224, 208, .88); font-size: .98rem; line-height: 1.75; margin: 0;
+}
+.panneau-texte strong { color: var(--or-pale, #E8D9A8); }
+
+.panneau-lien {
+  display: inline-flex; align-items: center; gap: .55rem;
+  margin-top: 1.35rem; color: var(--or-doux, #D9BC75);
+  font-family: 'Inter', sans-serif; font-size: .86rem; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  text-decoration: none; border-bottom: 1px solid transparent; align-self: flex-start;
+  transition: color .25s ease, border-color .25s ease, gap .25s ease;
+}
+.panneau-lien svg { width: 16px; height: 16px; }
+.panneau-lien:hover { color: var(--or-pale, #E8D9A8); border-color: currentColor; gap: .85rem; }
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 980px) {
+  .atlas-carte,
+  .atlas-carte-route { grid-template-columns: 1fr; }
+  .atlas-panneau { min-height: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marqueur.actif .point-halo { animation: none; opacity: 1; }
+}

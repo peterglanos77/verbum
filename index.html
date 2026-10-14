@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VERBUM — Le Musée Virtuel de la Bible | La Parole qui traverse les millénaires</title>
+  <meta name="description" content="Musée virtuel immersif : 3 500 ans de préservation de la Bible. Des rouleaux d'argent de Ketef Hinnom aux manuscrits de la Mer Morte, des grands codex grecs à la reconstitution du Codex H en 2026.">
+  <meta name="theme-color" content="#0A0A0F">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="VERBUM — Le Musée Virtuel de la Bible">
+  <meta property="og:description" content="Parcourez 3 500 ans de transmission biblique : manuscrits, copistes, massorètes, Qumrân, Gutenberg et les découvertes du XXIe siècle.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Données structurées -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "VERBUM — Le Musée Virtuel de la Bible",
+    "inLanguage": "fr",
+    "description": "Musée virtuel retraçant la préservation de la Bible de Moïse au Codex H 2026 : 10 galeries, une Grande Frise interactive et 51 narrations audio.",
+    "hasPart": [
+      {"@type": "CreativeWork", "name": "Galerie I — Les Origines", "url": "galeries/origines.html"},
+      {"@type": "CreativeWork", "name": "Galerie II — Les Copistes", "url": "galeries/copistes.html"},
+      {"@type": "CreativeWork", "name": "Galerie III — Qumrân", "url": "galeries/qumran.html"},
+      {"@type": "CreativeWork", "name": "Galerie IV — Les Grands Codex Grecs", "url": "galeries/codex-grecs.html"},
+      {"@type": "CreativeWork", "name": "Galerie V — Codex H", "url": "galeries/codex-h.html"},
+      {"@type": "CreativeWork", "name": "Galerie VI — Les Textes Apocryphes", "url": "galeries/apocryphes.html"},
+      {"@type": "CreativeWork", "name": "Galerie VII — La Septante et les Grandes Traductions", "url": "galeries/traductions.html"},
+      {"@type": "CreativeWork", "name": "Galerie VIII — Gutenberg", "url": "galeries/gutenberg.html"},
+      {"@type": "CreativeWork", "name": "Galerie IX — Preuves Historiques et Archéologiques", "url": "galeries/preuves.html"},
+      {"@type": "CreativeWork", "name": "Galerie X — La Bible Résiste aux Destructions", "url": "galeries/destructions.html"}
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <!-- Typographies (repli élégant hors-ligne : Georgia/serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/musee.css">
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "VERBUM — Le Musée Virtuel de la Bible", "description": "Musée virtuel interactif en français sur la préservation de la Bible : frise, galeries, Codex H, quiz, atlas, psaumes.", "url": "https://verbum-museum.fr/index.html", "isPartOf": {"@type": "WebSite", "name": "VERBUM — Le Musée Virtuel de la Bible", "url": "https://verbum-museum.fr/"}}</script>
+</head>
+<body>
+
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- ==================== LOADER ==================== -->
+  <div class="loader-verbum" aria-hidden="true">
+    <div class="loader-couleurs">
+      <div class="mot"><span>V</span><span>E</span><span>R</span><span>B</span><span>U</span><span>M</span></div>
+      <div class="hebreu">בְּרֵאשִׁית הָיָה הַדָּבָר</div>
+      <div class="trait"></div>
+    </div>
+  </div>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="nav-principale">
+    <div class="conteneur-large nav-inner">
+      <a href="#accueil" class="logo-verbum" aria-label="VERBUM — accueil">
+        <svg class="monogramme" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="or-nav" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#E8D48B"/><stop offset="0.5" stop-color="#C9A84C"/><stop offset="1" stop-color="#8A6D2F"/>
+            </linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="14" fill="#0A0A0F"/>
+          <rect x="3" y="3" width="58" height="58" rx="11" fill="none" stroke="url(#or-nav)" stroke-width="2"/>
+          <path d="M16 14 L32 50 L48 14 L41.5 14 L32 36 L22.5 14 Z" fill="url(#or-nav)"/>
+        </svg>
+        <span>
+          VERBUM
+          <span class="slogan">Le Musée Virtuel de la Bible</span>
+        </span>
+      </a>
+
+      <nav class="nav-liens" aria-label="Navigation principale">
+        <a href="#manifeste">Le Musée</a>
+        <a href="#chiffres">Chiffres clés</a>
+        <a href="#frise">La Frise</a>
+        <a href="#carte">La Carte</a>
+        <a href="#galeries">Les Galeries</a>
+        <a href="#visite">Visite guidée</a>
+      <details class="menu-salles">
+          <summary>Les Salles</summary>
+          <div class="menu-salles-panneau">
+            <div>
+              <div class="ms-titre">Salles du récit</div>
+              <a href="livre-or.html">Le Livre d'Or</a>
+              <a href="science.html">La Science du Texte</a>
+              <a href="enigmes.html">Les Énigmes</a>
+              <a href="vrai-faux.html">Vrai ou Faux</a>
+              <a href="voix-monde.html">Les Voix du Monde</a>
+              <a href="jardin-psaumes.html">Le Jardin des Psaumes</a>
+              <a href="art.html">La Lumière des Lettres</a>
+            </div>
+            <div>
+              <div class="ms-titre">Expériences</div>
+              <a href="atlas.html">L'Atlas</a>
+              <a href="tresors.html">Le Cabinet des Trésors</a>
+              <a href="comparateur.html">Le Comparateur</a>
+              <a href="radio.html">La Radio</a>
+              <a href="quiz.html">Le Défi (quiz)</a>
+              <a href="glossaire.html">Le Glossaire</a>
+              <a href="parcours-jeunesse.html">Les Petits Scribes</a>
+              <a href="visite-guidee.html">La Visite guidée</a>
+              <a href="questions.html">Les Questions</a>
+            </div>
+            <div>
+              <div class="ms-titre">La méthode</div>
+              <a href="sources.html">Sources &amp; Défi</a>
+              <a href="colophon.html">Colophon</a>
+              <a href="explorer.html">Le Plan du Musée</a>
+            </div>
+          </div>
+        </details>
+            </nav>
+
+      <a class="bouton-nav" href="explorer.html">Le Plan du Musée</a>
+
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="barre-progression" aria-hidden="true"></div>
+  </header>
+
+  <main id="contenu">
+    <!-- ==================== HÉROS ==================== -->
+    <section class="heros" id="accueil">
+      <div class="heros-couche fond" aria-hidden="true"></div>
+      <div class="heros-couche voile" aria-hidden="true"></div>
+      <canvas id="particules" aria-hidden="true"></canvas>
+
+      <div class="heros-contenu">
+        <div class="pastille-hero">
+          <span class="pulsation" aria-hidden="true"></span>
+          Musée virtuel · Ouvert 24 h/24 · Gratuit
+        </div>
+
+        <h1 class="titre-hero" aria-label="VERBUM">
+          <span class="lettre" style="--i:0">V</span><span class="lettre" style="--i:1">E</span><span class="lettre" style="--i:2">R</span><span class="lettre" style="--i:3">B</span><span class="lettre" style="--i:4">U</span><span class="lettre" style="--i:5">M</span>
+        </h1>
+
+        <p class="slogan-hero">« La Parole qui traverse les <strong>millénaires</strong> »</p>
+        <p class="slogan-secondaire">Le livre le plus lu <span>·</span> le plus traduit <span>·</span> le plus préservé de l'histoire humaine</p>
+
+        <p class="preambule-hero">
+          Deux mille ans avant notre ère jusqu'aux laboratoires du XXI<sup>e</sup> siècle : parcourez
+          l'extraordinaire aventure de la Bible. Des milliers de scribes, de massorètes, de moines et de
+          savants ont œuvré, siècle après siècle, pour que sa Parole nous parvienne <em>quasi intacte</em>.
+        </p>
+
+        <div class="hero-actions">
+          <a class="bouton bouton-primaire" href="#galeries">
+            Commencer la visite
+            <svg class="fleche" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="bouton bouton-secondaire" href="#visite">🎧 Écouter la narration</a>
+        </div>
+      </div>
+
+      <div class="indicateur-scroll" aria-hidden="true">
+        <div class="souris"></div>
+        Faites défiler
+      </div>
+    </section>
+
+    <!-- ==================== TRANSITION PARCHEMIN ==================== -->
+    <div class="transition-parchemin" data-reveal="zoom" aria-hidden="true">
+      <img src="assets/images/parchemin-deroule.jpg" alt="" loading="lazy" width="1408" height="768">
+    </div>
+
+    <!-- ==================== MANIFESTE ==================== -->
+    <section class="section section-manifeste" id="manifeste">
+      <div class="conteneur grille-manifeste">
+        <div data-reveal="gauche">
+          <div class="surtitre">Le propos du musée</div>
+          <h2>Un livre qui a survécu <span class="texte-or">à tout</span></h2>
+
+          <p class="citation-monumentale">
+            <span class="guillemet">“</span>La Bible n'est pas seulement un texte sacré :
+            c'est le plus grand défi de préservation que l'humanité ait jamais relevé —
+            et elle l'a gagné.<span class="guillemet" style="margin-left:.1em;margin-right:0">”</span>
+          </p>
+
+          <p>
+            Édit impérial, incendies, persécutions, interdictions, empires disparus : tout a
+            conspiré pour effacer ce livre. Pourtant, des grottes de Qumrân aux presses de Mayence,
+            des scriptoria de Tibériade aux laboratoires d'imagerie multispectrale du XXI<sup>e</sup> siècle,
+            chaque génération a repris le flambeau. En avril 2026, l'Université de Glasgow elle-même
+            ressuscitait 42 pages que le monde croyait <strong>perdues à jamais</strong>.
+          </p>
+          <p style="margin-top:1.1rem">
+            VERBUM réunit ici les témoins les plus anciens et les plus spectaculaires de cette
+            transmission : manuscrits, fragments, codex, traductions — avec leurs textes,
+            leurs analyses et les preuves archéologiques qui les accompagnent.
+          </p>
+
+          <div style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem">
+            <span class="badge badge-canonique">Textes canoniques</span>
+            <span class="badge badge-apocryphe">Textes apocryphes</span>
+            <span class="badge badge-actualite">Actualité 2026</span>
+          </div>
+        </div>
+
+        <div class="visuel" data-reveal="zoom">
+          <img src="assets/images/fragments-lumiere.jpg" alt="Fragments de manuscrits anciens éclairés par un faisceau de lumière" loading="lazy" width="1200" height="900">
+          <div class="cadre-or" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CHIFFRES CLÉS ==================== -->
+    <section class="section section-chiffres" id="chiffres">
+      <div class="conteneur-large">
+        <div style="text-align:center;max-width:44rem;margin:0 auto var(--espace-l)" data-reveal>
+          <div class="surtitre" style="justify-content:center">La Bible en chiffres</div>
+          <h2>Le livre le plus <span class="texte-or">diffusé</span> de l'histoire</h2>
+        </div>
+
+        <div class="grille-chiffres" style="grid-template-columns:repeat(auto-fit,minmax(190px,1fr))">
+          <div class="chiffre-carte" data-reveal>
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 6c-2-1.5-5-2-8-2v14c3 0 6 .5 8 2 2-1.5 5-2 8-2V4c-3 0-6 .5-8 2zM12 6v14"/></svg>
+            <div class="valeur"><span data-count="3500">0</span></div>
+            <div class="unite">Ans de transmission</div>
+          </div>
+          <div class="chiffre-carte" data-reveal>
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
+            <div class="valeur"><span data-count="5800" data-suffixe="+">0</span></div>
+            <div class="unite">Manuscrits grecs du NT</div>
+          </div>
+          <div class="chiffre-carte" data-reveal>
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 6h10M4 12h16M4 18h7"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/></svg>
+            <div class="valeur"><span data-count="40" data-suffixe="+">0</span></div>
+            <div class="unite">Langues originelles</div>
+          </div>
+          <div class="chiffre-carte" data-reveal>
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+            <div class="valeur"><span data-count="3600" data-suffixe="+">0</span></div>
+            <div class="unite">Langues traduites</div>
+          </div>
+          <div class="chiffre-carte" data-reveal>
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9V4h12v5M6 18h12v3H6zM4 9h16v8H4zM9 12h6"/></svg>
+            <div class="valeur"><span data-count="700" data-suffixe=" M+">0</span></div>
+            <div class="unite">Bibles distribuées</div>
+          </div>
+          <div class="chiffre-carte" data-reveal>
+            <svg class="icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 20c2-4 5-7 9-7s7 3 9 7M7 8c0-2.2 2.2-4 5-4s5 1.8 5 4-2.2 4-5 4-5-1.8-5-4z"/><path d="M12 12v1"/></svg>
+            <div class="valeur"><span data-count="900" data-suffixe="+">0</span></div>
+            <div class="unite">Manuscrits de Qumrân</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FRISE COMPLÈTE ==================== -->
+    <section class="section section-frise" id="frise">
+      <div class="conteneur-large">
+        <div class="entete-section">
+          <div data-reveal>
+            <div class="surtitre">La grande frise chronologique</div>
+            <h2>De Moïse au <span class="texte-or">Codex H</span></h2>
+            <p class="sous-titre-section">20 jalons de -1450 à 2026. Filtrez par époque, faites glisser la frise, et cliquez sur un événement pour révéler son histoire complète. Pour l'expérience complète — <strong>36 événements cliquables</strong> — <a href="frise.html" style="color:var(--or,#C9A84C)">ouvrez la Grande Frise →</a></p>
+          </div>
+          <div class="frise-fleches" data-reveal>
+            <button class="frise-bouton" data-frise-direction="precedent" aria-label="Événement précédent">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>
+            </button>
+            <button class="frise-bouton" data-frise-direction="suivant" aria-label="Événement suivant">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="filtres-frise" id="frise-filtres" data-reveal role="group" aria-label="Filtrer par époque">
+          <button class="filtre-bouton actif" data-epoque="tous">Toutes les époques</button>
+          <button class="filtre-bouton" data-epoque="antiquite">Antiquité</button>
+          <button class="filtre-bouton" data-epoque="moyen-age">Moyen Âge</button>
+          <button class="filtre-bouton" data-epoque="temps-modernes">Temps modernes</button>
+          <button class="filtre-bouton" data-epoque="contemporaine">Époque contemporaine</button>
+        </div>
+
+        <div class="conteneur-frise" data-reveal>
+          <div class="frise-piste" id="frise-complete" tabindex="0" aria-label="Frise chronologique interactive">
+            <!-- Rendu dynamique depuis data/timeline-data.js -->
+          </div>
+          <div class="frise-legende">
+            <div class="piste-ligne" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CARTE DU MONDE ==================== -->
+    <section class="section section-carte" id="carte">
+      <div class="conteneur-large">
+        <div class="carte-layout">
+          <div class="carte-monde" id="carte-monde" data-reveal="gauche" role="img" aria-label="Carte du monde montrant les lieux de conservation des manuscrits bibliques">
+            <canvas id="carte-canvas" aria-hidden="true"></canvas>
+            <svg id="carte-arcs" aria-hidden="true"></svg>
+            <div id="carte-marqueurs"></div>
+          </div>
+
+          <div data-reveal="droite">
+            <div class="surtitre">Rayonnement mondial</div>
+            <h2>La Bible sur <span class="texte-or">toute la terre</span></h2>
+            <p class="sous-titre-section" style="margin-bottom:1.35rem">
+              Des lieux de conservation des grands manuscrits jusqu'aux continents où la Bible
+              est aujourd'hui traduite : survolez les points dorés de la carte.
+            </p>
+
+            <button class="toggle-rayonnement" id="toggle-rayonnement" aria-pressed="false">
+              <span class="pastille" aria-hidden="true"></span>
+              Afficher les routes de diffusion
+            </button>
+
+            <div class="stats-diffusion">
+              <div class="stat-diffusion"><div class="region">Afrique</div><div class="nombre">1 100+ langues</div></div>
+              <div class="stat-diffusion"><div class="region">Asie</div><div class="nombre">900+ langues</div></div>
+              <div class="stat-diffusion"><div class="region">Amériques</div><div class="nombre">600+ langues</div></div>
+              <div class="stat-diffusion"><div class="region">Europe · Océanie</div><div class="nombre">800+ langues</div></div>
+            </div>
+
+            <p style="margin-top:1.35rem;font-family:var(--font-ui);font-size:.88rem;color:var(--gris-brume)">
+              Depuis Gutenberg, <strong style="color:var(--or-clair)">plus de 5 milliards</strong> d'exemplaires
+              de la Bible ont été imprimés — un record absolu dans l'histoire de l'édition.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GALERIES ==================== -->
+    <section class="section section-galeries" id="galeries">
+      <div class="conteneur-large">
+        <div class="entete-section">
+          <div data-reveal>
+            <div class="surtitre">Les salles du musée</div>
+            <h2>Dix galeries pour <span class="texte-or">3 500 ans</span> d'histoire</h2>
+            <p class="sous-titre-section">Chaque galerie expose les manuscrits, leurs textes originaux traduits en français, et les preuves historiques qui les éclairent.</p>
+          </div>
+        </div>
+
+        <div class="grille-galeries">
+
+          <a class="carte-galerie" data-reveal href="galeries/origines.html">
+            <div class="vignette">
+              <img src="assets/images/scribe-hebreu.jpg" alt="Scribe hébreu écrivant un rouleau à la lueur d'une lampe à huile" loading="lazy" width="800" height="525">
+              <div class="numero">I</div>
+            </div>
+            <div class="corps-carte">
+              <h3>Les Origines : Moïse et les premiers textes</h3>
+              <p class="resume">De la Torah aux rouleaux d'argent de Ketef Hinnom : la naissance de l'Écriture sainte, 1 500 ans avant notre ère.</p>
+              <span class="lien-carte">Découvrir la galerie <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a class="carte-galerie" data-reveal href="galeries/copistes.html">
+            <div class="vignette">
+              <img src="assets/images/scriptorium-moine.jpg" alt="Scriptorium de monastère médiéval avec des moines copistes" loading="lazy" width="800" height="525">
+              <div class="numero">II</div>
+            </div>
+            <div class="corps-carte">
+              <h3>Les Copistes et les Massorètes</h3>
+              <p class="resume">Esdras, les scribes d'Israël et les massorètes de Tibériade : l'art sacré de la copie jusqu'au Codex Leningradensis.</p>
+              <span class="lien-carte">Découvrir la galerie <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a class="carte-galerie" data-reveal href="galeries/qumran.html">
+            <div class="vignette">
+              <img src="assets/images/hero-qumran.jpg" alt="Grottes de Qumrân au lever du soleil au-dessus de la mer Morte" loading="lazy" width="800" height="525">
+              <div class="numero">III</div>
+              <div class="badges-vignette"><span class="badge badge-phare">Section phare</span></div>
+            </div>
+            <div class="corps-carte">
+              <h3>Les Manuscrits de la Mer Morte</h3>
+              <p class="resume">Qumrân, 1947 : 900 manuscrits, 11 grottes, le Grand Rouleau d'Ésaïe. La preuve que le texte hébreu n'a quasiment pas changé.</p>
+              <span class="lien-carte">Découvrir la galerie <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a class="carte-galerie" data-reveal href="galeries/codex-grecs.html">
+            <div class="vignette">
+              <img src="assets/images/bibliotheque-antique.jpg" alt="Grande bibliothèque antique avec des rouleaux de papyrus" loading="lazy" width="800" height="525">
+              <div class="numero">IV</div>
+            </div>
+            <div class="corps-carte">
+              <h3>Les Grands Codex Grecs</h3>
+              <p class="resume">P52, P66, Vaticanus, Sinaïticus, Alexandrinus : les géants sur lesquels repose le Nouveau Testament moderne.</p>
+              <span class="lien-carte">Découvrir la galerie <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a class="carte-galerie" data-reveal href="galeries/codex-h.html">
+            <div class="vignette">
+              <img src="assets/images/laboratoire-conservation.jpg" alt="Laboratoire d'imagerie multispectrale sur parchemins anciens" loading="lazy" width="800" height="525">
+              <div class="numero">V</div>
+              <div class="badges-vignette"><span class="badge badge-actualite">2026</span></div>
+            </div>
+            <div class="corps-carte">
+              <h3>Codex H — Les 42 pages perdues</h3>
+              <p class="resume">Avril 2026 : l'Université de Glasgow ressuscite par imagerie multispectrale 42 pages des Lettres de Paul perdues au Mont Athos.</p>
+              <span class="lien-carte">Découvrir la galerie <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a class="carte-galerie" data-reveal href="galeries/apocryphes.html">
+            <div class="vignette">
+              <img src="assets/images/desert-judee.jpg" alt="Désert de Judée au lever du jour vu du ciel" loading="lazy" width="800" height="525">
+              <div class="numero">VI</div>
+              <div class="badges-vignette"><span class="badge badge-apocryphe">Hors canon</span></div>
+            </div>
+            <div class="corps-carte">
+              <h3>Les Textes Apocryphes</h3>
+              <p class="resume">Évangile de Thomas, de Judas, de Marie, livres d'Hénoch : ces textes que l'histoire a écartés — et pourquoi.</p>
+              <span class="lien-carte">Découvrir la galerie <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a class="carte-galerie" data-reveal href="galeries/traductions.html">
+            <div class="vignette">
+              <img src="assets/images/hero-traductions.jpg" alt="Bibliothèque antique d'Alexandrie, scribes traduisant les rouleaux" loading="lazy" width="800" height="525">
+              <div class="numero">VII</div>
+            </div>
+            <div class="corps-carte">
+              <h3>La Septante et les Grandes Traductions</h3>
+              <p class="resume">De l'hébreu au grec, du grec au latin : la Septante, la Vulgate de Jérôme, la Peshitta syriaque, Wyclif, Luther et Segond.</p>
+              <span class="lien-carte">Découvrir la galerie <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a class="carte-galerie" data-reveal href="galeries/gutenberg.html">
+            <div class="vignette">
+              <img src="assets/images/hero-gutenberg.jpg" alt="Atelier d'imprimerie de Gutenberg au XVe siècle" loading="lazy" width="800" height="525">
+              <div class="numero">VIII</div>
+            </div>
+            <div class="corps-carte">
+              <h3>Gutenberg et la Révolution de l'Imprimerie</h3>
+              <p class="resume">1455, Mayence : la Bible à 42 lignes sort de presse et démocratise l'accès à la Parole dans le monde entier.</p>
+              <span class="lien-carte">Découvrir la galerie <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a class="carte-galerie" data-reveal href="galeries/preuves.html">
+            <div class="vignette">
+              <img src="assets/images/hero-preuves.jpg" alt="Stèles anciennes gravées d'inscriptions sous une lumière de musée" loading="lazy" width="800" height="525">
+              <div class="numero">IX</div>
+            </div>
+            <div class="corps-carte">
+              <h3>Preuves Historiques et Archéologiques</h3>
+              <p class="resume">Stèle de Mésha, cylindre de Cyrus, inscription de Pilate : quand la terre confirme l'Écriture.</p>
+              <span class="lien-carte">Découvrir la galerie <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a class="carte-galerie" data-reveal href="galeries/destructions.html">
+            <div class="vignette">
+              <img src="assets/images/hero-destructions.jpg" alt="Une Bible ouverte parmi les braises, éclairée par l'aube" loading="lazy" width="800" height="525">
+              <div class="numero">X</div>
+            </div>
+            <div class="corps-carte">
+              <h3>La Bible Résiste à Toutes les Destructions</h3>
+              <p class="resume">Dioclétien, l'Inquisition, Voltaire, l'URSS : histoire du livre que personne n'a jamais réussi à détruire.</p>
+              <span class="lien-carte">Découvrir la galerie <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a class="carte-galerie" data-reveal href="galeries/paul.html">
+            <div class="vignette">
+              <img src="assets/images/hero-paul.jpg" alt="Paul écrivant ses lettres à la lueur d'une lampe, dans sa prison" loading="lazy" width="800" height="525">
+              <div class="numero">HS</div>
+              <div class="badges-vignette"><span class="badge badge-actualite">Hors-série</span></div>
+            </div>
+            <div class="corps-carte">
+              <h3>Le Dossier Paul</h3>
+              <p class="resume">De P46 au Codex H : les lettres les plus lues de l'histoire, leur tradition manuscrite, et le débat honnête sur leur plume.</p>
+              <span class="lien-carte">Ouvrir le dossier <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </div>
+          </a>
+
+          <a class="carte-galerie" data-reveal href="galeries/marie-madeleine.html">
+            <div class="vignette">
+              <img src="assets/images/hero-marie.jpg" alt="Femme en robe claire à l'aube devant l'entrée d'un tombeau dans un jardin" loading="lazy" width="800" height="525">
+              <div class="numero">HS</div>
+              <div class="badges-vignette"><span class="badge badge-actualite">Hors-série</span></div>
+            </div>
+            <div class="corps-carte">
+              <h3>Le Dossier Marie-Madeleine</h3>
+              <p class="resume">Témoin, légende, tradition : les Évangiles, l'apocryphe qui la fait parler, le mélange médiéval de 591 et la Provence — distingués, jamais confondus.</p>
+              <span class="lien-carte">Ouvrir le dossier <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== LES SALLES DU MUSÉE ==================== -->
+    <section class="section" id="salles">
+      <div class="conteneur-large">
+        <div class="entete-section" style="justify-content:center;text-align:center">
+          <div data-reveal>
+            <div class="surtitre" style="justify-content:center">Prolonger la visite</div>
+            <h2>Les <span class="texte-or">salles du musée</span></h2>
+            <p class="sous-titre-section" style="margin-inline:auto;max-width:44rem">
+              Récits, expériences et méthode — les salles qui prolongent les galeries.
+              Le plan complet se trouve dans <a href="explorer.html">Le Plan du Musée</a>.
+            </p>
+          </div>
+        </div>
+
+        <div class="grille-salles" style="margin-top:2.25rem">
+          <a class="carte-salle" data-reveal href="livre-or.html">
+            <img src="assets/images/hero-livre-or.jpg" alt="Codex enluminé doré sous les bougies" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Récit</span><h3>Le Livre d'Or des Découvertes</h3><p>10 découvertes qui ont sauvé le texte.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="science.html">
+            <img src="assets/images/hero-science.jpg" alt="Manuscrit sous un appareil de numérisation" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Récit</span><h3>La Science au secours du Texte</h3><p>Carbone 14, imagerie, IA.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="enigmes.html">
+            <img src="assets/images/hero-enigmes.jpg" alt="Codex ouvert dans une archive sombre" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Récit</span><h3>Les Énigmes du Texte</h3><p>Ce que nous ne savons pas — sans rien cacher.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="vrai-faux.html">
+            <img src="assets/images/hero-vrai-faux.jpg" alt="Loupe sur un manuscrit et balance de laiton" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Récit</span><h3>Vrai ou Faux</h3><p>10 idées reçues confrontées à la preuve.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="voix-monde.html">
+            <img src="assets/images/hero-voix.jpg" alt="Écritures du monde sur une table de scribe" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Récit</span><h3>Les Voix du Monde</h3><p>La Bible en 10 langues.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="jardin-psaumes.html">
+            <img src="assets/images/hero-psaumes.jpg" alt="Lac miroir et montagnes à l'aube" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Récit</span><h3>Le Jardin des Psaumes</h3><p>7 psaumes intégralement traduits.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="art.html">
+            <img src="assets/images/hero-art.jpg" alt="Codex enluminé doré ouvert" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Récit</span><h3>La Lumière des Lettres</h3><p>Enluminure, calligraphie, rubricateurs.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="atlas.html">
+            <img src="assets/images/hero-atlas.jpg" alt="Table de cartographe ancienne" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Expérience</span><h3>L'Atlas des Textes</h3><p>3 cartes interactives.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="tresors.html">
+            <img src="assets/images/vitrine-alep.jpg" alt="Vitrine de musée présentant un manuscrit ancien" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Expérience</span><h3>Le Cabinet des Trésors</h3><p>24 artefacts en vitrine.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="comparateur.html">
+            <img src="assets/images/torah-scribe.jpg" alt="Rouleau de Torah, plume et encrier" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Expérience</span><h3>Le Comparateur de textes</h3><p>Hébreu, grec, latin, français.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="radio.html">
+            <img src="assets/images/harpe-lumiere.jpg" alt="Harpe ancienne à la lumière du couchant" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Expérience</span><h3>La Radio de VERBUM</h3><p>63 pistes narrées.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="quiz.html">
+            <img src="assets/images/balances-preuves.jpg" alt="Balance de laiton avec parchemin et poids" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Expérience</span><h3>Le Défi de la Transmission</h3><p>Quiz de 10 questions.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="glossaire.html">
+            <img src="assets/images/lettrine-or.jpg" alt="Lettrine dorée enluminée" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Expérience</span><h3>Le Glossaire</h3><p>23 termes expliqués.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="parcours-jeunesse.html">
+            <img src="assets/images/arbre-eaux.jpg" alt="Arbre au bord d'un ruisseau ensoleillé" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Expérience</span><h3>L'Expédition des Petits Scribes</h3><p>7 missions pour les jeunes.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="visite-guidee.html">
+            <img src="assets/images/ciel-etoile-desert.jpg" alt="Ciel étoilé au-dessus du désert" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Expérience</span><h3>La Visite guidée</h3><p>10 étapes, 90 minutes.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="questions.html">
+            <img src="assets/images/bibliotheque-nuit.jpg" alt="Grande bibliothèque la nuit" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Expérience</span><h3>La Salle des Questions</h3><p>12 questions, 12 réponses sourcées.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="sources.html">
+            <img src="assets/images/or-decouvertes.jpg" alt="Artefacts précieux sous une spot muséale" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Méthode</span><h3>Sources &amp; Défi</h3><p>Bibliographie et index des débats.</p></div>
+          </a>
+          <a class="carte-salle" data-reveal href="colophon.html">
+            <img src="assets/images/colophon-plume.jpg" alt="Plume d'oie et encrier sur un bureau" loading="lazy" width="800" height="525">
+            <div class="cs-corps"><span class="cs-numero">Méthode</span><h3>Le Colophon</h3><p>Conventions et mentions.</p></div>
+          </a>
+        </div>
+
+        <div class="ligne-boutons" style="margin-top:2.45rem">
+          <a class="bouton bouton-principal" href="explorer.html">Le Plan complet du musée</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONVENTIONS ==================== -->
+    <section class="section section-conventions" id="conventions">
+      <div class="conteneur">
+        <div class="entete-section" style="justify-content:center;text-align:center">
+          <div data-reveal>
+            <div class="surtitre" style="justify-content:center">Notre méthode</div>
+            <h2>Une exigence <span class="texte-or">scientifique</span> et éditoriale</h2>
+          </div>
+        </div>
+
+        <div class="grille-conventions">
+          <div class="carte-convention" data-reveal>
+            <svg class="icone-convention" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 5h11a3 3 0 013 3v11H7a3 3 0 01-3-3V5z"/><path d="M7 15h11"/><path d="M9 8h5M9 11h6"/></svg>
+            <h4>Le tétragramme : « Jéhovah »</h4>
+            <p>Partout où le texte hébreu porte le nom divin יהוה (YHWH), la traduction française emploie systématiquement <strong>Jéhovah</strong> — jamais un substitut.</p>
+          </div>
+          <div class="carte-convention" data-reveal>
+            <svg class="icone-convention" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+            <h4>Canonique ou apocryphe : toujours signalé</h4>
+            <p>Chaque document exposé porte son badge : <span class="badge badge-canonique">Canonique</span> ou <span class="badge badge-apocryphe">Apocryphe</span>. Aucune confusion possible entre le corpus biblique et les textes qui l'entourent.</p>
+          </div>
+          <div class="carte-convention" data-reveal>
+            <svg class="icone-convention" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 6h18M3 12h12M3 18h7"/><circle cx="19" cy="16" r="3"/><path d="M19 14v2l1.5 1"/></svg>
+            <h4>Textes originaux, toujours traduits</h4>
+            <p>Hébreu et grec sont présentés dans leur écriture originale — mais jamais seuls : une traduction française intégrale (textes courts) ou un résumé détaillé (textes longs) accompagne toujours le document.</p>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:2.85rem" data-reveal>
+          <p class="sous-titre-section" style="margin-inline:auto;max-width:42rem">
+            La méthode complète du musée, l'origine de chaque affirmation et nos limites assumées
+            sont détaillées dans la salle des chercheurs.
+          </p>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.35rem">
+            <a class="bouton bouton-primaire" href="sources.html">Sources &amp; Méthode</a>
+            <a class="bouton bouton-secondaire" href="quiz.html">Relever le Défi →</a>
+            <a class="bouton bouton-secondaire" href="atlas.html">L'Atlas des Textes</a>
+            <a class="bouton bouton-secondaire" href="livre-or.html">Le Livre d'Or des Découvertes</a>
+            <a class="bouton bouton-secondaire" href="art.html">La Lumière des Lettres</a>
+            <a class="bouton bouton-secondaire" href="science.html">La Science du Texte</a>
+            <a class="bouton bouton-secondaire" href="vrai-faux.html">Vrai ou Faux</a>
+            <a class="bouton bouton-secondaire" href="jardin-psaumes.html">Le Jardin des Psaumes</a>
+            <a class="bouton bouton-secondaire" href="voix-monde.html">Les Voix du Monde</a>
+            <a class="bouton bouton-secondaire" href="enigmes.html">Les Énigmes du Texte</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VISITE GUIDÉE AUDIO ==================== -->
+    <section class="section" id="visite" style="background:var(--bleu-abysse)">
+      <div class="conteneur-large visite-layout">
+        <div class="visite-visuel" data-reveal="zoom">
+          <img src="assets/images/ciel-etoile-desert.jpg" alt="Ciel étoilé au-dessus du désert de Judée, la nuit" loading="lazy" width="1000" height="850">
+          <div class="cadre-or" aria-hidden="true"></div>
+        </div>
+
+        <div data-reveal="droite">
+          <div class="surtitre">Visite guidée audio</div>
+          <h2>Laissez-vous <span class="texte-or">raconter</span> l'histoire</h2>
+          <p class="sous-titre-section">
+            Trois narrations immersives, commentées en français pour vous accompagner
+            à travers le musée — de la Torah aux laboratoires du XXI<sup>e</sup> siècle.
+          </p>
+
+          <div class="playlist-audio" id="playlist-audio">
+            <button class="piste-audio" data-audio-src="assets/audio/narration-intro-1.mp3">
+              <span class="icone-lecture"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+              <span class="infos-audio">
+                <strong>1. Aux origines de la Parole</strong>
+                <span>De Moïse aux massorètes de Tibériade · ≈ 1 min 45</span>
+              </span>
+              <span class="onde" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+            </button>
+
+            <button class="piste-audio" data-audio-src="assets/audio/narration-intro-2.mp3">
+              <span class="icone-lecture"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+              <span class="infos-audio">
+                <strong>2. Qumrân, Gutenberg et le Codex H</strong>
+                <span>De 1947 à la reconstitution de 2026 · ≈ 1 min 40</span>
+              </span>
+              <span class="onde" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+            </button>
+
+            <button class="piste-audio" data-audio-src="assets/audio/narration-frise.mp3">
+              <span class="icone-lecture"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+              <span class="infos-audio">
+                <strong>3. Comment parcourir la frise</strong>
+                <span>Le fil conducteur de votre visite · ≈ 55 s</span>
+              </span>
+              <span class="onde" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+            </button>
+          </div>
+
+          <div class="barre-audio-globale" aria-hidden="true">
+            <div id="audio-progression"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BLOC FINAL ==================== -->
+    <section class="section bloc-final">
+      <div class="fond-cite" aria-hidden="true"></div>
+      <div class="conteneur contenu-cite">
+        <div class="surtitre" style="justify-content:center" data-reveal>Votre visite continue</div>
+        <h2 data-reveal>Entrez dans l'histoire du <span class="texte-or">livre éternel</span></h2>
+        <p class="sous-titre-section" style="margin:1.25rem auto 2.25rem;text-align:center" data-reveal>
+          Dix galeries, une frise de 3 500 ans, des dizaines de manuscrits traduits,
+          des narrations audio immersives — et la démonstration que la Parole a traversé
+          les siècles quasi intacte.
+        </p>
+        <div class="hero-actions" style="opacity:1;animation:none" data-reveal>
+          <a class="bouton bouton-primaire" href="#galeries">
+            Commencer la visite
+            <svg class="fleche" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="bouton bouton-secondaire" href="#frise">Explorer la frise chronologique</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== MODALE FRISE ==================== -->
+  <div class="modale-frise" id="modale-frise" aria-hidden="true" role="dialog" aria-label="Détail de l'événement">
+    <div class="modale-contenu"></div>
+  </div>
+
+  <!-- ==================== PIED DE PAGE ==================== -->
+  <footer class="pied-de-page">
+    <div class="conteneur-large">
+      <div class="grille-pied">
+        <div>
+          <div class="logo-verbum" style="margin-bottom:1.15rem">
+            <svg class="monogramme" viewBox="0 0 64 64" aria-hidden="true">
+              <rect width="64" height="64" rx="14" fill="#0A0A0F"/>
+              <rect x="3" y="3" width="58" height="58" rx="11" fill="none" stroke="#C9A84C" stroke-width="2"/>
+              <path d="M16 14 L32 50 L48 14 L41.5 14 L32 36 L22.5 14 Z" fill="#C9A84C"/>
+            </svg>
+            <span>VERBUM<span class="slogan">La Parole qui traverse les millénaires</span></span>
+          </div>
+          <p>
+            Musée virtuel consacré à l'histoire de la Bible, de ses manuscrits et du travail
+            millénaire de préservation qui nous l'a transmise.
+          </p>
+        </div>
+        <div>
+          <h4>Les galeries</h4>
+          <ul>
+            <li><a href="#galeries">I. Les Origines</a></li>
+            <li><a href="#galeries">II. Les Copistes</a></li>
+            <li><a href="#galeries">III. La Mer Morte</a></li>
+            <li><a href="#galeries">IV. Les Grands Codex</a></li>
+            <li><a href="#galeries">V. Codex H (2026)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Le musée</h4>
+          <ul>
+            <li><a href="#manifeste">Notre propos</a></li>
+            <li><a href="#conventions">Notre méthode</a></li>
+            <li><a href="#frise">Frise chronologique</a></li>
+            <li><a href="#carte">Carte du monde</a></li>
+            <li><a href="#visite">Visite guidée audio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Sources &amp; institutions</h4>
+          <ul>
+            <li><a href="https://www.gla.ac.uk" target="_blank" rel="noopener">Université de Glasgow — Codex H</a></li>
+            <li><a href="https://www.deadseascrolls.org.il" target="_blank" rel="noopener">Leon Levy Dead Sea Scrolls Library</a></li>
+            <li><a href="https://www.codexsinaiticus.org" target="_blank" rel="noopener">Codex Sinaiticus Project</a></li>
+            <li><a href="https://digi.vatlib.it" target="_blank" rel="noopener">Bibliothèque vaticane numérique</a></li>
+            <li><a href="https://csntm.org" target="_blank" rel="noopener">CSNTM — Manuscrits du NT</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="repertoire-pied">
+        <div>
+          <h4>Le parcours</h4>
+          <a href="frise.html">La Grande Frise</a>
+          <a href="index.html#galeries">Les 11 Galeries</a>
+          <a href="galeries/codex-h.html">Le Codex H — 2026</a>
+          <a href="galeries/paul.html">Le Dossier Paul</a>
+          <a href="galeries/marie-madeleine.html">Le Dossier Marie-Madeleine</a>
+        </div>
+        <div>
+          <h4>Salles du récit</h4>
+          <a href="livre-or.html">Le Livre d'Or des Découvertes</a>
+          <a href="science.html">La Science du Texte</a>
+          <a href="enigmes.html">Les Énigmes du Texte</a>
+          <a href="vrai-faux.html">Vrai ou Faux</a>
+          <a href="voix-monde.html">Les Voix du Monde</a>
+          <a href="jardin-psaumes.html">Le Jardin des Psaumes</a>
+          <a href="art.html">La Lumière des Lettres</a>
+        </div>
+        <div>
+          <h4>Expériences</h4>
+          <a href="atlas.html">L'Atlas des Textes</a>
+          <a href="tresors.html">Le Cabinet des Trésors</a>
+          <a href="comparateur.html">Le Comparateur</a>
+          <a href="radio.html">La Radio de VERBUM</a>
+          <a href="quiz.html">Le Défi (quiz)</a>
+          <a href="glossaire.html">Le Glossaire</a>
+          <a href="parcours-jeunesse.html">L'Expédition des Petits Scribes</a>
+          <a href="visite-guidee.html">La Visite guidée</a>
+          <a href="questions.html">La Salle des Questions</a>
+        </div>
+        <div>
+          <h4>La méthode</h4>
+          <a href="sources.html">Sources &amp; Défi</a>
+          <a href="colophon.html">Colophon &amp; mentions</a>
+          <a href="explorer.html">Le Plan du Musée</a>
+        </div>
+      </div>
+      <div class="baseline-pied">
+        <span>© <span id="annee-courante">2026</span> VERBUM — Musée Virtuel de la Bible. Projet éducatif et culturel.</span>
+        <span>Tétragramme traduit par « Jéhovah » · Textes canoniques et apocryphes distingués · <a href="colophon.html" style="color:var(--or-doux);text-decoration:underline">Colophon & mentions</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/particles.js" defer></script>
+  <script src="data/timeline-data.js" defer></script>
+  <script src="js/timeline.js" defer></script>
+  <script src="js/carte.js" defer></script>
+  <script src="js/audio-player.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

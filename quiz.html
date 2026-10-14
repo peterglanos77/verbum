@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Défi de la Transmission — Quiz | VERBUM</title>
+  <meta name="description" content="Dix questions pour vérifier ce que vous savez de la transmission biblique : Ketef Hinnom, Qumrân, la Septante, Gutenberg, le Codex H. Chaque réponse ouvre une porte du musée.">
+  <meta name="theme-color" content="#0A0A0F">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/musee.css">
+  <link rel="stylesheet" href="css/galeries.css">
+  <link rel="stylesheet" href="css/quiz.css">
+
+  <meta property="og:title" content="Le Défi de la Transmission — Quiz | VERBUM">
+  <meta property="og:description" content="Dix questions pour vérifier ce que vous savez de la transmission biblique : Ketef Hinnom, Qumrân, la Septante, Gutenberg, le Codex H. Chaque réponse ouvre une porte du musée.">
+  <meta property="og:image" content="https://verbum-museum.fr/assets/images/quiz-defi.jpg">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Le Défi de la Transmission — Quiz", "description": "Dix questions pour vérifier ce que vous savez de la transmission biblique : Ketef Hinnom, Qumrân, la Septante, Gutenberg, le Codex H. Chaque réponse ouvre une porte du musée.", "url": "https://verbum-museum.fr/quiz.html", "isPartOf": {"@type": "WebSite", "name": "VERBUM — Le Musée Virtuel de la Bible", "url": "https://verbum-museum.fr/"}, "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://verbum-museum.fr/"}, {"@type": "ListItem", "position": 2, "name": "Le Défi de la Transmission — Quiz", "item": "https://verbum-museum.fr/quiz.html"}]}}</script>
+</head>
+<body>
+
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="nav-principale">
+    <div class="conteneur-large nav-inner">
+      <a href="index.html" class="logo-verbum" aria-label="VERBUM — accueil">
+        <svg class="monogramme" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#0A0A0F"/>
+          <rect x="3" y="3" width="58" height="58" rx="11" fill="none" stroke="#C9A84C" stroke-width="2"/>
+          <path d="M16 14 L32 50 L48 14 L41.5 14 L32 36 L22.5 14 Z" fill="#C9A84C"/>
+        </svg>
+        <span>
+          VERBUM
+          <span class="slogan">Le Musée Virtuel de la Bible</span>
+        </span>
+      </a>
+
+      <nav class="nav-liens" aria-label="Navigation principale">
+        <a href="index.html#manifeste">Le Musée</a>
+        <a href="frise.html">La Frise</a>
+        <a href="index.html#carte">La Carte</a>
+        <a href="index.html#galeries">Les Galeries</a>
+        <a href="galeries/codex-h.html">Codex H</a>
+        <a href="index.html#visite">Visite guidée</a>
+      <details class="menu-salles">
+          <summary>Les Salles</summary>
+          <div class="menu-salles-panneau">
+            <div>
+              <div class="ms-titre">Salles du récit</div>
+              <a href="livre-or.html">Le Livre d'Or</a>
+              <a href="science.html">La Science du Texte</a>
+              <a href="enigmes.html">Les Énigmes</a>
+              <a href="vrai-faux.html">Vrai ou Faux</a>
+              <a href="voix-monde.html">Les Voix du Monde</a>
+              <a href="jardin-psaumes.html">Le Jardin des Psaumes</a>
+              <a href="art.html">La Lumière des Lettres</a>
+            </div>
+            <div>
+              <div class="ms-titre">Expériences</div>
+              <a href="atlas.html">L'Atlas</a>
+              <a href="tresors.html">Le Cabinet des Trésors</a>
+              <a href="comparateur.html">Le Comparateur</a>
+              <a href="radio.html">La Radio</a>
+              <a href="quiz.html">Le Défi (quiz)</a>
+              <a href="glossaire.html">Le Glossaire</a>
+              <a href="parcours-jeunesse.html">Les Petits Scribes</a>
+              <a href="visite-guidee.html">La Visite guidée</a>
+              <a href="questions.html">Les Questions</a>
+            </div>
+            <div>
+              <div class="ms-titre">La méthode</div>
+              <a href="sources.html">Sources &amp; Défi</a>
+              <a href="colophon.html">Colophon</a>
+              <a href="explorer.html">Le Plan du Musée</a>
+            </div>
+          </div>
+        </details>
+            </nav>
+
+      <a class="bouton-nav" href="quiz.html" aria-current="page">Le Défi</a>
+
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="barre-progression" aria-hidden="true"></div>
+  </header>
+
+  <main id="contenu">
+    <!-- ==================== HÉROS ==================== -->
+    <section class="hero-galerie" style="min-height:52vh">
+      <div class="fond-galerie" style="background-image:url('assets/images/quiz-defi.jpg')" aria-hidden="true"></div>
+      <div class="voile-galerie" aria-hidden="true"></div>
+      <div class="conteneur-large contenu-galerie">
+        <div style="width:100%">
+          <div class="numero-galerie">Le défi final</div>
+          <h1>Le Défi de la <span class="texte-or">Transmission</span></h1>
+          <p class="resume-galerie">
+            Dix questions. Zéro piège. Seulement des faits — ceux que vous venez de parcourir.
+            Chaque réponse ouvre une porte vers une salle du musée.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FIL D'ARIANE ==================== -->
+    <div class="conteneur-large">
+      <nav class="fil-ariane" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="sep">›</span>
+        <span>Le Défi de la Transmission</span>
+      </nav>
+    </div>
+
+    <!-- ==================== PRÉSENTATION + AUDIO ==================== -->
+    <section class="section-galerie" style="padding-bottom:var(--espace-m)">
+      <div class="conteneur-large">
+        <div style="max-width:52rem;margin:0 auto 2.45rem" data-reveal>
+          <div class="playlist-audio">
+            <button class="piste-audio" data-audio-src="assets/audio/narration-quiz.mp3">
+              <span class="icone-lecture"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+              <span class="infos-audio">
+                <strong>Écouter la consigne du Défi</strong>
+                <span>Narration · ≈ 1 min</span>
+              </span>
+              <span class="onde" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+            </button>
+          </div>
+          <div class="barre-audio-globale" aria-hidden="true"><div id="audio-progression"></div></div>
+        </div>
+
+        <!-- ==================== LE QUIZ ==================== -->
+        <div class="quiz-cadre" data-reveal>
+          <div class="quiz-barre" aria-hidden="true"><div class="jauge" id="quiz-jauge"></div></div>
+          <p class="quiz-progression-texte" id="quiz-progression-texte">Question 1 / 10 · Score : 0</p>
+          <div id="quiz-zone">
+            <p class="frise-vide">Chargement du défi…</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CLÔTURE ==================== -->
+    <section class="section" style="background:var(--bleu-abysse)">
+      <div class="conteneur" style="text-align:center">
+        <div data-reveal>
+          <div class="surtitre" style="justify-content:center">Pour aller plus loin</div>
+          <h2>La preuve est <span class="texte-or">dans les salles</span></h2>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.15rem">
+            <a class="bouton bouton-primaire" href="frise.html">La Grande Frise</a>
+            <a class="bouton bouton-secondaire" href="tresors.html">Le Cabinet des Trésors</a>
+            <a class="bouton bouton-secondaire" href="glossaire.html">Le Glossaire</a>
+            <a class="bouton bouton-secondaire" href="sources.html">Sources &amp; Méthode</a>
+            <a class="bouton bouton-secondaire" href="index.html#galeries">Les 10 galeries</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PIED DE PAGE ==================== -->
+  <footer class="pied-de-page">
+    <div class="conteneur-large">
+      <div class="repertoire-pied">
+        <div>
+          <h4>Le parcours</h4>
+          <a href="frise.html">La Grande Frise</a>
+          <a href="index.html#galeries">Les 11 Galeries</a>
+          <a href="galeries/codex-h.html">Le Codex H — 2026</a>
+          <a href="galeries/paul.html">Le Dossier Paul</a>
+          <a href="galeries/marie-madeleine.html">Le Dossier Marie-Madeleine</a>
+        </div>
+        <div>
+          <h4>Salles du récit</h4>
+          <a href="livre-or.html">Le Livre d'Or des Découvertes</a>
+          <a href="science.html">La Science du Texte</a>
+          <a href="enigmes.html">Les Énigmes du Texte</a>
+          <a href="vrai-faux.html">Vrai ou Faux</a>
+          <a href="voix-monde.html">Les Voix du Monde</a>
+          <a href="jardin-psaumes.html">Le Jardin des Psaumes</a>
+          <a href="art.html">La Lumière des Lettres</a>
+        </div>
+        <div>
+          <h4>Expériences</h4>
+          <a href="atlas.html">L'Atlas des Textes</a>
+          <a href="tresors.html">Le Cabinet des Trésors</a>
+          <a href="comparateur.html">Le Comparateur</a>
+          <a href="radio.html">La Radio de VERBUM</a>
+          <a href="quiz.html">Le Défi (quiz)</a>
+          <a href="glossaire.html">Le Glossaire</a>
+          <a href="parcours-jeunesse.html">L'Expédition des Petits Scribes</a>
+          <a href="visite-guidee.html">La Visite guidée</a>
+          <a href="questions.html">La Salle des Questions</a>
+        </div>
+        <div>
+          <h4>La méthode</h4>
+          <a href="sources.html">Sources &amp; Défi</a>
+          <a href="colophon.html">Colophon &amp; mentions</a>
+          <a href="explorer.html">Le Plan du Musée</a>
+        </div>
+      </div>
+      <div class="baseline-pied" style="border-top:0;padding-top:0">
+        <span>© <span id="annee-courante">2026</span> VERBUM — Musée Virtuel de la Bible. Projet éducatif et culturel.</span>
+        <span>Tétragramme traduit par « Jéhovah » · Textes canoniques et apocryphes distingués · Site en français</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+  <script src="js/audio-player.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+</body>
+</html>

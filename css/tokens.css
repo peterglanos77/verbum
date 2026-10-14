@@ -1,0 +1,93 @@
+/* ============================================================
+   VERBUM — Design Tokens
+   Charte graphique du Musée Virtuel de la Bible
+   ============================================================ */
+
+:root {
+  /* ---------- Couleurs ---------- */
+  --or-sacre: #C9A84C;
+  --or-clair: #E8D48B;
+  --or-sombre: #8A6D2F;
+  --or-lueur: rgba(201, 168, 76, 0.35);
+  --parchemin: #F5E6C8;
+  --blanc-parchemin: #F0E8D5;
+  --noir-profond: #0A0A0F;
+  --bleu-nuit: #0D1B2A;
+  --bleu-abysse: #060B14;
+  --rouge-antique: #8B1A1A;
+  --rouge-lueur: rgba(139, 26, 26, 0.35);
+  --gris-pierre: #4A4A5A;
+  --gris-brume: #9B9BAD;
+  --vert-canon: #3E7C4F;
+  --vert-lueur: rgba(62, 124, 79, 0.25);
+
+  /* Dégradés */
+  --degrade-or: linear-gradient(135deg, #E8D48B 0%, #C9A84C 45%, #8A6D2F 100%);
+  --degrade-nuit: linear-gradient(180deg, #0A0A0F 0%, #0D1B2A 100%);
+  --degrade-voile: linear-gradient(180deg, rgba(10,10,15,0) 0%, rgba(10,10,15,0.55) 55%, rgba(10,10,15,0.96) 100%);
+
+  /* ---------- Typographies ---------- */
+  --font-titre: 'Cinzel Decorative', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-soustitre: 'Cormorant Garamond', Georgia, serif;
+  --font-corps: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-hebreu: 'Noto Sans Hebrew', 'Times New Roman', serif;
+  --font-grec: 'Noto Sans Greek', 'Times New Roman', serif;
+
+  /* Échelle typographique */
+  --texte-xs: 0.75rem;
+  --texte-s: 0.875rem;
+  --texte-m: 1.0625rem;
+  --texte-l: 1.375rem;
+  --texte-xl: clamp(1.6rem, 3vw, 2.25rem);
+  --texte-2xl: clamp(2.2rem, 5vw, 3.5rem);
+  --texte-hero: clamp(3.2rem, 11vw, 8.5rem);
+
+  /* ---------- Espacements ---------- */
+  --espace-xs: 0.5rem;
+  --espace-s: 1rem;
+  --espace-m: 1.75rem;
+  --espace-l: 3rem;
+  --espace-xl: 5rem;
+  --section-y: clamp(4.5rem, 11vw, 9rem);
+  --conteneur-large: 1320px;
+  --conteneur: 1120px;
+
+  /* ---------- Animations ---------- */
+  --ease-sacree: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-douce: cubic-bezier(0.4, 0, 0.2, 1);
+  --duree-flash: 0.18s;
+  --duree-rapide: 0.32s;
+  --duree-moyenne: 0.65s;
+  --duree-lente: 1.15s;
+  --duree-revelation: 1.4s;
+
+  /* ---------- Rayons, ombres, bordures ---------- */
+  --rayon-s: 6px;
+  --rayon-m: 14px;
+  --rayon-l: 22px;
+  --ombre-cartes: 0 18px 50px rgba(0, 0, 0, 0.55);
+  --ombre-or: 0 8px 32px rgba(201, 168, 76, 0.28);
+  --bordure-or: 1px solid rgba(201, 168, 76, 0.32);
+  --bordure-fine: 1px solid rgba(240, 232, 213, 0.1);
+
+  /* ---------- Couches ---------- */
+  --z-fond: 0;
+  --z-decor: 5;
+  --z-contenu: 10;
+  --z-nav: 100;
+  --z-lecteur: 200;
+  --z-modale: 500;
+  --z-loader: 1000;
+  --z-curseur: 1100;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duree-flash: 0.01s;
+    --duree-rapide: 0.01s;
+    --duree-moyenne: 0.01s;
+    --duree-lente: 0.01s;
+    --duree-revelation: 0.01s;
+  }
+}

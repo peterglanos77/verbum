@@ -1,0 +1,63 @@
+/* ============================================================
+   VERBUM — La Salle des Questions · styles (accordéon)
+   ============================================================ */
+.faq-liste {
+  max-width: 52rem;
+  margin: 0 auto;
+  display: grid;
+  gap: .95rem;
+}
+.faq-item {
+  border: 1px solid rgba(201, 168, 76, .2);
+  border-radius: 14px;
+  background: var(--bleu-nuit, #131318);
+  overflow: hidden;
+}
+.faq-item[open] {
+  border-color: rgba(201, 168, 76, .5);
+}
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.15rem 1.45rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--police-titre-secondaire, 'Cormorant Garamond', serif);
+  font-size: 1.18rem;
+  font-weight: 600;
+  transition: background .3s;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { background: rgba(201, 168, 76, .07); }
+.faq-item summary .numero-faq {
+  flex: 0 0 auto;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(201, 168, 76, .5);
+  border-radius: 50%;
+  font-family: var(--police-titre, 'Cinzel Decorative', serif);
+  font-size: .85rem;
+  color: var(--or, #C9A84C);
+}
+.faq-item summary .fleche-faq {
+  margin-left: auto;
+  transition: transform .3s;
+  color: var(--or, #C9A84C);
+}
+.faq-item[open] summary .fleche-faq { transform: rotate(180deg); }
+.faq-reponse {
+  padding: 0 1.45rem 1.35rem 4.55rem;
+}
+.faq-reponse p {
+  font-family: var(--police-corps-litteraire, 'EB Garamond', serif);
+  font-size: 1.12rem;
+  line-height: 1.8;
+  margin: 0 0 .95rem;
+}
+.faq-reponse .lien-galerie-jalon { margin-top: .35rem; }
+@media (max-width: 560px) {
+  .faq-reponse { padding-left: 1.45rem; }
+}

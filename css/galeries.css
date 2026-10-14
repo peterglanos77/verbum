@@ -1,0 +1,350 @@
+/* ============================================================
+   VERBUM — Pages de galeries : héros, textes sacrés, preuves
+   ============================================================ */
+
+/* ---------- Fil d'Ariane ---------- */
+.fil-ariane {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gris-pierre);
+  padding: 1.55rem 0 0.35rem;
+}
+.fil-ariane a { color: var(--gris-brume); transition: color var(--duree-rapide); }
+.fil-ariane a:hover { color: var(--or-clair); }
+.fil-ariane .sep { color: var(--or-sombre); }
+
+/* ---------- Héros de galerie ---------- */
+.hero-galerie {
+  position: relative;
+  min-height: clamp(430px, 62vh, 620px);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  margin-top: 4.4rem;
+}
+.hero-galerie .fond-galerie {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  animation: ken-burns 22s ease-in-out infinite alternate;
+}
+@keyframes ken-burns {
+  from { transform: scale(1.05) translate(0, 0); }
+  to   { transform: scale(1.14) translate(-1.5%, -1.2%); }
+}
+.hero-galerie .voile-galerie {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 85% 70% at 30% 20%, rgba(10,10,15,0.15) 0%, rgba(10,10,15,0.72) 100%),
+    linear-gradient(180deg, rgba(10,10,15,0.35) 0%, rgba(10,10,15,0.15) 45%, rgba(10,10,15,0.96) 100%);
+}
+.hero-galerie .contenu-galerie {
+  position: relative;
+  z-index: 2;
+  padding: 0 0 3.65rem;
+}
+.hero-galerie .numero-galerie {
+  font-family: var(--font-titre);
+  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+  letter-spacing: 0.42em;
+  color: var(--or-sacre);
+  text-transform: uppercase;
+}
+.hero-galerie h1 {
+  font-size: clamp(2.15rem, 5.6vw, 4.35rem);
+  margin: 0.55rem 0 0.85rem;
+  max-width: 22ch;
+}
+.hero-galerie .resume-galerie {
+  max-width: 52rem;
+  font-size: clamp(1.05rem, 1.9vw, 1.32rem);
+  line-height: 1.72;
+  color: rgba(240, 232, 213, 0.92);
+}
+.hero-galerie .meta-galerie {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.55rem;
+}
+.pastille-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-ui);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blanc-parchemin);
+  background: rgba(10, 10, 15, 0.55);
+  border: var(--bordure-fine);
+  border-radius: 999px;
+  padding: 0.55rem 1.15rem;
+}
+.pastille-meta svg { width: 15px; height: 15px; color: var(--or-sacre); }
+
+/* ---------- Corps de galerie ---------- */
+.section-galerie { padding-block: var(--section-y); }
+.section-galerie.alternant {
+  background: var(--bleu-nuit);
+  border-block: var(--bordure-fine);
+}
+
+.entete-document {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2.25rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.entete-document .visuel-document {
+  position: relative;
+  border-radius: var(--rayon-l);
+  overflow: hidden;
+  box-shadow: var(--ombre-cartes);
+}
+.entete-document .visuel-document img {
+  width: 100%;
+  aspect-ratio: 4 / 3.1;
+  object-fit: cover;
+}
+.legende-image {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--gris-pierre);
+  margin-top: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Fiche technique du document */
+.fiche-document {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.85rem;
+  margin: 1.65rem 0;
+}
+.case-fiche {
+  padding: 0.95rem 1.15rem;
+  border: var(--bordure-fine);
+  border-radius: var(--rayon-s);
+  background: rgba(10, 10, 15, 0.35);
+}
+.case-fiche .cle {
+  font-family: var(--font-ui);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gris-pierre);
+}
+.case-fiche .valeur-fiche {
+  font-family: var(--font-soustitre);
+  font-size: 1.06rem;
+  color: var(--or-clair);
+  margin-top: 0.28rem;
+}
+
+/* ---------- Bloc de texte sacré ---------- */
+.texte-sacre {
+  position: relative;
+  margin: 2.35rem 0;
+  padding: 2.35rem 2.15rem;
+  border-radius: var(--rayon-m);
+  background:
+    radial-gradient(ellipse 100% 120% at 50% 0%, rgba(201, 168, 76, 0.1) 0%, transparent 60%),
+    rgba(10, 10, 15, 0.55);
+  border: var(--bordure-or);
+}
+.texte-sacre::before {
+  content: "✦";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px; height: 30px;
+  display: grid;
+  place-items: center;
+  background: var(--noir-profond);
+  border: var(--bordure-or);
+  border-radius: 50%;
+  color: var(--or-sacre);
+  font-size: 0.85rem;
+}
+.texte-sacre .titre-texte {
+  font-family: var(--font-ui);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--or-sacre);
+  text-align: center;
+  margin-bottom: 1.55rem;
+}
+.texte-sacre .original {
+  font-family: var(--font-hebreu);
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+  line-height: 2.15;
+  color: var(--or-clair);
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+.texte-sacre .original.grec {
+  font-family: var(--font-grec);
+  direction: ltr;
+}
+.texte-sacre .traduction-sacree {
+  font-family: var(--font-corps);
+  font-size: clamp(1.18rem, 2.1vw, 1.45rem);
+  font-style: italic;
+  line-height: 1.95;
+  color: var(--parchemin);
+  text-align: center;
+  max-width: 46rem;
+  margin: 0 auto;
+}
+.texte-sacre .reference-sacree {
+  display: block;
+  margin-top: 1.35rem;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-style: normal;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gris-brume);
+}
+.texte-sacre .note-tetragramme {
+  margin: 1.65rem auto 0;
+  max-width: 46rem;
+  padding: 0.95rem 1.25rem;
+  border-left: 2px solid var(--or-sombre);
+  background: rgba(201, 168, 76, 0.07);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--gris-brume);
+  text-align: left;
+}
+
+/* ---------- Cartes de preuves ---------- */
+.grille-preuves {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+  gap: 1.65rem;
+}
+.carte-preuve {
+  border-radius: var(--rayon-m);
+  overflow: hidden;
+  background: rgba(10, 10, 15, 0.45);
+  border: var(--bordure-fine);
+  transition: transform var(--duree-moyenne) var(--ease-sacree), border-color var(--duree-moyenne), box-shadow var(--duree-moyenne);
+}
+.carte-preuve:hover {
+  transform: translateY(-8px);
+  border-color: rgba(201, 168, 76, 0.5);
+  box-shadow: var(--ombre-or);
+}
+.carte-preuve img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+.carte-preuve .corps-preuve { padding: 1.55rem 1.55rem 1.75rem; }
+.carte-preuve .date-preuve {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--or-sacre);
+}
+.carte-preuve h3 {
+  font-size: 1.32rem;
+  margin: 0.55rem 0 0.75rem;
+  color: var(--parchemin);
+}
+.carte-preuve .description {
+  font-family: var(--font-ui);
+  font-size: 0.885rem;
+  line-height: 1.75;
+  color: var(--gris-brume);
+}
+.citation-preuve {
+  margin: 1.15rem 0 0;
+  padding: 1.05rem 1.25rem;
+  border-left: 2px solid var(--or-sacre);
+  background: rgba(201, 168, 76, 0.08);
+}
+.citation-preuve .original-citation {
+  font-family: var(--font-grec);
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--or-clair);
+}
+.citation-preuve .original-citation.hieroglyphes {
+  font-family: var(--font-corps);
+  font-style: italic;
+}
+.citation-preuve .traduction-citation {
+  margin-top: 0.65rem;
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--blanc-parchemin);
+}
+.citation-preuve .ref-citation {
+  display: block;
+  margin-top: 0.55rem;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gris-pierre);
+}
+
+/* ---------- Navigation entre salles : voir components.css (.nav-galeries) ---------- */
+
+/* ---------- Bloc texte long (résumés) ---------- */
+.resume-long p {
+  margin-bottom: 1.15rem;
+  font-size: 1.135rem;
+  line-height: 1.88;
+}
+.resume-long p:first-child::first-letter {
+  font-family: var(--font-titre);
+  font-size: 3.4em;
+  float: left;
+  line-height: 0.82;
+  margin: 0.08em 0.12em 0 0;
+  background: var(--degrade-or);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (max-width: 900px) {
+  .entete-document { grid-template-columns: 1fr; }
+}
+
+/* ---------- Groupes de la Radio de VERBUM ---------- */
+.groupe-radio {
+  margin-bottom: 2.85rem;
+}
+.groupe-radio h2 {
+  margin: 0 0 1.15rem;
+  font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+}
+.groupe-radio .playlist-audio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: .85rem;
+}

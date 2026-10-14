@@ -1,0 +1,764 @@
+/* ============================================================
+   VERBUM — Composants : boutons, badges, cartes, frise, audio
+   ============================================================ */
+
+/* ================= BOUTONS ================= */
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-family: var(--font-ui);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 1.05rem 2.15rem;
+  border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--duree-rapide) var(--ease-sacree),
+              box-shadow var(--duree-rapide),
+              background var(--duree-rapide),
+              color var(--duree-rapide),
+              border-color var(--duree-rapide);
+}
+.bouton:hover { transform: translateY(-3px); }
+.bouton:active { transform: translateY(-1px) scale(0.98); }
+
+.bouton-primaire {
+  background: var(--degrade-or);
+  color: var(--noir-profond);
+  box-shadow: 0 12px 36px rgba(201, 168, 76, 0.32);
+}
+.bouton-primaire:hover { box-shadow: 0 18px 46px rgba(201, 168, 76, 0.5); }
+
+.bouton-secondaire {
+  border: 1.5px solid rgba(201, 168, 76, 0.55);
+  color: var(--or-clair);
+  background: rgba(201, 168, 76, 0.07);
+}
+.bouton-secondaire:hover {
+  background: rgba(201, 168, 76, 0.16);
+  border-color: var(--or-sacre);
+  box-shadow: var(--ombre-or);
+}
+
+.bouton .fleche {
+  width: 18px; height: 18px;
+  transition: transform var(--duree-rapide) var(--ease-sacree);
+}
+.bouton:hover .fleche { transform: translateX(5px); }
+
+/* ================= BADGES ================= */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.42rem 0.95rem;
+  border-radius: 999px;
+}
+.badge::before {
+  content: "";
+  width: 7px; height: 7px;
+  border-radius: 50%;
+}
+.badge-canonique {
+  color: #A8DDB4;
+  background: var(--vert-lueur);
+  border: 1px solid rgba(62, 124, 79, 0.55);
+}
+.badge-canonique::before { background: var(--vert-canon); box-shadow: 0 0 10px var(--vert-lueur); }
+.badge-apocryphe {
+  color: #E8A9A9;
+  background: var(--rouge-lueur);
+  border: 1px solid rgba(139, 26, 26, 0.55);
+}
+.badge-apocryphe::before { background: var(--rouge-antique); box-shadow: 0 0 10px var(--rouge-lueur); }
+.badge-actualite {
+  color: var(--or-clair);
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.5);
+}
+.badge-actualite::before { background: var(--or-sacre); animation: pulsation 2s infinite; }
+.badge-phare {
+  color: var(--noir-profond);
+  background: var(--degrade-or);
+}
+.badge-phare::before { background: var(--noir-profond); }
+
+/* ================= CARTES DE GALERIE ================= */
+.grille-galeries {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.85rem;
+}
+
+.carte-galerie {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--rayon-m);
+  overflow: hidden;
+  background: rgba(13, 27, 42, 0.55);
+  border: var(--bordure-fine);
+  transition: transform var(--duree-moyenne) var(--ease-sacree),
+              border-color var(--duree-moyenne),
+              box-shadow var(--duree-moyenne);
+}
+.carte-galerie:hover {
+  transform: translateY(-10px);
+  border-color: rgba(201, 168, 76, 0.55);
+  box-shadow: var(--ombre-cartes), var(--ombre-or);
+}
+
+.carte-galerie .vignette {
+  position: relative;
+  aspect-ratio: 16 / 10.5;
+  overflow: hidden;
+}
+.carte-galerie .vignette img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 1.1s var(--ease-sacree), filter var(--duree-moyenne);
+}
+.carte-galerie:hover .vignette img { transform: scale(1.1); }
+.carte-galerie .vignette::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,15,0) 40%, rgba(10,10,15,0.85) 100%);
+}
+.carte-galerie .numero {
+  position: absolute;
+  top: 1rem; left: 1.15rem;
+  z-index: 2;
+  font-family: var(--font-titre);
+  font-size: 1.65rem;
+  color: var(--or-clair);
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.7);
+}
+.carte-galerie .badges-vignette {
+  position: absolute;
+  top: 1.05rem; right: 1.05rem;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: flex-end;
+  max-width: 70%;
+}
+
+.carte-galerie .corps-carte {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.45rem 1.5rem 1.65rem;
+  flex: 1;
+}
+.carte-galerie h3 {
+  font-size: 1.32rem;
+  color: var(--parchemin);
+  transition: color var(--duree-rapide);
+}
+.carte-galerie:hover h3 { color: var(--or-clair); }
+.carte-galerie .resume {
+  font-family: var(--font-ui);
+  font-size: 0.89rem;
+  line-height: 1.72;
+  color: var(--gris-brume);
+  flex: 1;
+}
+.carte-galerie .lien-carte {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-ui);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--or-sacre);
+  margin-top: 0.55rem;
+}
+.carte-galerie .lien-carte svg {
+  width: 15px; height: 15px;
+  transition: transform var(--duree-rapide) var(--ease-sacree);
+}
+.carte-galerie:hover .lien-carte svg { transform: translateX(6px); }
+.carte-galerie.est-phantome { opacity: 0.72; }
+.carte-galerie.est-phantome .lien-carte { color: var(--gris-pierre); }
+
+/* ================= FRISE HORIZONTALE ================= */
+.conteneur-frise {
+  position: relative;
+}
+.frise-piste {
+  display: flex;
+  gap: 1.55rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1.25rem 0.35rem 2.15rem;
+  scrollbar-width: none;
+  cursor: grab;
+}
+.frise-piste::-webkit-scrollbar { display: none; }
+.frise-piste.saisie { cursor: grabbing; scroll-snap-type: none; }
+
+.frise-evenement {
+  position: relative;
+  flex: 0 0 min(76vw, 320px);
+  scroll-snap-align: center;
+  background: linear-gradient(165deg, rgba(13, 27, 42, 0.9) 0%, rgba(10, 10, 15, 0.95) 100%);
+  border: var(--bordure-fine);
+  border-radius: var(--rayon-m);
+  padding: 1.85rem 1.65rem 1.75rem;
+  transition: transform var(--duree-moyenne) var(--ease-sacree), border-color var(--duree-moyenne), box-shadow var(--duree-moyenne);
+}
+.frise-evenement:hover {
+  transform: translateY(-7px);
+  border-color: rgba(201, 168, 76, 0.55);
+  box-shadow: var(--ombre-or);
+}
+.frise-evenement::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 1.65rem; right: 1.65rem;
+  height: 2px;
+  background: var(--degrade-or);
+  opacity: 0.55;
+}
+.frise-evenement .date {
+  font-family: var(--font-titre);
+  font-size: 1.55rem;
+  color: var(--or-sacre);
+  letter-spacing: 0.04em;
+}
+.frise-evenement h4 {
+  margin: 0.55rem 0 0.75rem;
+  font-size: 1.18rem;
+  color: var(--parchemin);
+}
+.frise-evenement p {
+  font-family: var(--font-ui);
+  font-size: 0.86rem;
+  line-height: 1.7;
+  color: var(--gris-brume);
+}
+.frise-evenement .badge { margin-top: 1.15rem; }
+
+.frise-fleches {
+  display: flex;
+  gap: 0.75rem;
+}
+.frise-bouton {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(201, 168, 76, 0.5);
+  color: var(--or-sacre);
+  display: grid;
+  place-items: center;
+  transition: background var(--duree-rapide), transform var(--duree-rapide) var(--ease-sacree), border-color var(--duree-rapide);
+}
+.frise-bouton:hover {
+  background: rgba(201, 168, 76, 0.15);
+  border-color: var(--or-sacre);
+  transform: scale(1.08);
+}
+.frise-bouton svg { width: 20px; height: 20px; }
+
+.frise-legende {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.65rem;
+}
+.frise-legende .piste-ligne {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--or-sacre), rgba(201, 168, 76, 0.08));
+  border-radius: 2px;
+}
+
+/* ================= CONVENTIONS (3 cartes) ================= */
+.grille-conventions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.65rem;
+}
+.carte-convention {
+  padding: 2.15rem 1.85rem;
+  border-radius: var(--rayon-m);
+  background: rgba(10, 10, 15, 0.4);
+  border: var(--bordure-fine);
+  transition: border-color var(--duree-moyenne), transform var(--duree-moyenne) var(--ease-sacree);
+}
+.carte-convention:hover {
+  border-color: rgba(201, 168, 76, 0.45);
+  transform: translateY(-6px);
+}
+.carte-convention .icone-convention {
+  width: 46px; height: 46px;
+  color: var(--or-sacre);
+  margin-bottom: 1.25rem;
+}
+.carte-convention h4 { color: var(--or-clair); margin-bottom: 0.7rem; font-size: 1.22rem; }
+.carte-convention p {
+  font-family: var(--font-ui);
+  font-size: 0.89rem;
+  color: var(--gris-brume);
+  line-height: 1.75;
+}
+
+/* ================= LECTEUR AUDIO (prêt E02+) ================= */
+.lecteur-audio {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.05rem;
+  background: rgba(201, 168, 76, 0.08);
+  border: var(--bordure-or);
+  border-radius: 999px;
+  padding: 0.65rem 1.55rem 0.65rem 0.65rem;
+}
+.lecteur-audio .bouton-lecture {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--degrade-or);
+  color: var(--noir-profond);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: transform var(--duree-rapide) var(--ease-sacree);
+}
+.lecteur-audio .bouton-lecture:hover { transform: scale(1.1); }
+.lecteur-audio .titre-audio {
+  font-family: var(--font-ui);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--blanc-parchemin);
+  letter-spacing: 0.04em;
+}
+.lecteur-audio .onde {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 26px;
+}
+.lecteur-audio .onde span {
+  width: 3px;
+  height: 30%;
+  border-radius: 3px;
+  background: var(--or-sacre);
+  animation: onde-sonore 1.1s ease-in-out infinite;
+}
+.lecteur-audio .onde span:nth-child(2) { animation-delay: 0.12s; height: 55%; }
+.lecteur-audio .onde span:nth-child(3) { animation-delay: 0.24s; height: 85%; }
+.lecteur-audio .onde span:nth-child(4) { animation-delay: 0.36s; height: 55%; }
+.lecteur-audio .onde span:nth-child(5) { animation-delay: 0.48s; height: 35%; }
+
+/* ================= CURSEUR PERSONNALISÉ ================= */
+@media (hover: hover) and (pointer: fine) {
+  body.curseur-plume,
+  body.curseur-plume a,
+  body.curseur-plume button {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Cpath d='M4 22 L13 3 L18 8 L8 22 Z' fill='%23C9A84C' stroke='%230A0A0F' stroke-width='1.4'/%3E%3Ccircle cx='5' cy='22' r='2.2' fill='%23E8D48B'/%3E%3C/svg%3E") 4 22, auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .grille-conventions { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .grille-galeries { grid-template-columns: 1fr; }
+}
+
+/* ---------- Widget de confort ---------- */
+.widget-confort {
+  position: fixed;
+  right: 1.15rem;
+  bottom: 1.15rem;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .55rem;
+}
+.confort-bascule {
+  width: 3.15rem;
+  height: 3.15rem;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, .55);
+  background: rgba(10, 10, 15, .9);
+  color: var(--or, #C9A84C);
+  font-family: var(--police-titre, 'Cinzel Decorative', serif);
+  font-size: 1.05rem;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .45);
+}
+.confort-bascule:hover { background: rgba(201, 168, 76, .18); }
+.confort-panneau {
+  width: 16.5rem;
+  padding: 1.05rem 1.15rem;
+  border: 1px solid rgba(201, 168, 76, .35);
+  border-radius: 14px;
+  background: rgba(10, 10, 15, .96);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, .55);
+}
+.confort-titre {
+  margin: 0 0 .75rem;
+  font-size: .82rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--or, #C9A84C);
+}
+.confort-ligne {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .75rem;
+  font-size: .92rem;
+  margin-bottom: .65rem;
+}
+.confort-boutons { display: flex; gap: .45rem; }
+.confort-boutons button,
+.confort-reset {
+  border: 1px solid rgba(201, 168, 76, .4);
+  background: none;
+  color: inherit;
+  border-radius: 9px;
+  padding: .32rem .72rem;
+  cursor: pointer;
+  font-size: .85rem;
+}
+.confort-boutons button:hover,
+.confort-reset:hover { border-color: var(--or, #C9A84C); background: rgba(201, 168, 76, .12); }
+.confort-reset { width: 100%; margin-top: .35rem; }
+body.confort-espace p,
+body.confort-espace li,
+body.confort-espace .description,
+body.confort-espace .resume-long {
+  line-height: 2.05;
+  letter-spacing: .012em;
+}
+
+/* ==========================================================================
+   ACCESSIBILITÉ — skip-link & focus visible (passe qualité E29)
+   ========================================================================== */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 2000;
+  padding: .85rem 1.45rem;
+  background: var(--or, #C9A84C);
+  color: #0A0A0F;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: .92rem;
+  text-decoration: none;
+  border-radius: 0 0 var(--rayon-s, 8px) 0;
+}
+.skip-link:focus {
+  left: 0;
+  outline: 3px solid var(--or-pale, #E8D9A8);
+  outline-offset: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--or, #C9A84C);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ==========================================================================
+   E31 — Plan du Musée : grille de salles, fat footer, menu « Les Salles »
+   ========================================================================== */
+
+/* ---------- Grille de cartes-salles (explorer + index) ---------- */
+.grille-salles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--espace-s, 1.15rem);
+}
+.carte-salle {
+  display: flex; flex-direction: column;
+  background: rgba(255, 255, 255, .035);
+  border: 1px solid rgba(201, 168, 76, .28);
+  border-radius: var(--rayon-m, 12px);
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform .35s var(--ease-out, ease), border-color .35s ease, box-shadow .35s ease;
+}
+.carte-salle:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 168, 76, .6);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, .45);
+}
+.carte-salle img {
+  width: 100%; height: 150px; object-fit: cover;
+  border-bottom: 1px solid rgba(201, 168, 76, .25);
+}
+.cs-corps { padding: 1.05rem 1.25rem 1.35rem; }
+.cs-numero {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: .82rem; font-weight: 700;
+  letter-spacing: .16em;
+  color: var(--or-doux, #D9BC75);
+}
+.carte-salle h3 {
+  margin: .45rem 0 .55rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.28rem; font-weight: 700;
+  color: var(--texte-clair, #E8E0D0);
+  line-height: 1.25;
+}
+.carte-salle p {
+  margin: 0; font-size: .92rem; line-height: 1.65;
+  color: rgba(232, 224, 208, .72);
+}
+
+/* ---------- Fat footer : répertoire à 4 colonnes ---------- */
+.repertoire-pied {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: var(--espace-s, 1.15rem) var(--espace-m, 1.65rem);
+  padding-block: var(--espace-m, 1.65rem) var(--espace-s, 1.15rem);
+  border-top: 1px solid rgba(201, 168, 76, .22);
+}
+.repertoire-pied h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: .78rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--or-doux, #D9BC75);
+  margin: 0 0 .85rem;
+}
+.repertoire-pied a {
+  display: block;
+  color: rgba(232, 224, 208, .72);
+  text-decoration: none;
+  font-size: .92rem;
+  line-height: 2.05;
+  transition: color .25s ease, transform .25s ease;
+}
+.repertoire-pied a:hover {
+  color: var(--or-pale, #E8D9A8);
+  transform: translateX(4px);
+}
+
+/* ---------- Menu déroulant « Les Salles » (details/summary, sans JS) ---------- */
+.menu-salles { position: relative; }
+.menu-salles summary {
+  list-style: none;
+  cursor: pointer;
+  color: rgba(232, 224, 208, .82);
+  font-family: 'Inter', sans-serif;
+  font-size: .82rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: .45rem .25rem;
+  transition: color .25s ease;
+  display: flex; align-items: center; gap: .4rem;
+}
+.menu-salles summary::-webkit-details-marker { display: none; }
+.menu-salles summary::after {
+  content: '';
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  opacity: .7;
+}
+.menu-salles summary:hover,
+.menu-salles[open] summary { color: var(--or, #C9A84C); }
+.menu-salles-panneau {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 560px;
+  background: rgba(12, 12, 18, .98);
+  border: 1px solid rgba(201, 168, 76, .4);
+  border-radius: var(--rayon-m, 12px);
+  padding: 1.45rem 1.65rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .55);
+  z-index: 900;
+}
+.ms-titre {
+  font-family: 'Inter', sans-serif;
+  font-size: .72rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--or-doux, #D9BC75);
+  margin-bottom: .55rem;
+}
+.menu-salles-panneau a {
+  display: block;
+  color: rgba(232, 224, 208, .8);
+  text-decoration: none;
+  font-size: .88rem;
+  line-height: 1.95;
+  transition: color .2s ease;
+}
+.menu-salles-panneau a:hover { color: var(--or, #C9A84C); }
+
+@media (max-width: 1100px) {
+  .menu-salles-panneau {
+    position: static;
+    transform: none;
+    min-width: 0;
+    grid-template-columns: 1fr;
+    box-shadow: none;
+    background: transparent;
+    border: 0;
+    padding: .65rem 0 .35rem .85rem;
+    border-left: 1px solid rgba(201, 168, 76, .3);
+    margin-left: .35rem;
+  }
+}
+
+/* ==========================================================================
+   E32 — Navigation entre salles (précédent / suivant) — composant partagé
+   Petites pastilles modernes, chargé sur les 34 pages via components.css
+   ========================================================================== */
+
+.nav-galeries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 0.85rem;
+  padding-block: var(--espace-l);
+  border-top: var(--bordure-fine, 1px solid rgba(201, 168, 76, 0.2));
+}
+.lien-galerie {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  max-width: 420px;
+  padding: 0.62rem 1.15rem 0.62rem 0.72rem;
+  border: 1px solid rgba(201, 168, 76, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.028);
+  text-decoration: none;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.lien-galerie[style*="text-align"] {
+  padding: 0.62rem 0.72rem 0.62rem 1.15rem;
+}
+.lien-galerie:hover {
+  border-color: rgba(201, 168, 76, 0.55);
+  background: rgba(201, 168, 76, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+}
+.lien-galerie .direction {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--or-doux, #D9BC75);
+  opacity: 0.9;
+}
+.lien-galerie .titre-lien {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--texte-clair, #E8E0D0);
+  line-height: 1.3;
+}
+.lien-galerie svg {
+  width: 30px; height: 30px;
+  padding: 8px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  color: var(--or-sacre, #C9A84C);
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.22);
+  border-radius: 50%;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.lien-galerie:hover svg {
+  background: rgba(201, 168, 76, 0.85);
+  color: #14141f;
+  transform: scale(1.06);
+}
+.lien-galerie:first-child:hover svg { transform: scale(1.06) translateX(-2px); }
+.lien-galerie:last-child:hover svg { transform: scale(1.06) translateX(2px); }
+
+@media (max-width: 900px) {
+  .nav-galeries { flex-direction: column; }
+  .lien-galerie {
+    max-width: none;
+    justify-content: flex-start;
+  }
+  .lien-galerie[style*="text-align"] { flex-direction: row-reverse; justify-content: flex-start; }
+}
+
+/* ---------- Filet de sécurité : tout SVG sans dimension reste discret ----------
+   :where() garde une spécificité nulle : toute règle de classe (logo, frise…)
+   garde la priorité. Évite les chevrons/icônes géants si un CSS manque. */
+:where(svg:not([width]):not([height])) {
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
+}
+
+/* ---------- Icônes dans les boutons ---------- */
+.bouton .icone-bouton,
+svg.icone-bouton {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+
+/* ==========================================================================
+   E33 — Blocs partagés (déplacés depuis quiz.css / grande-frise.css)
+   ========================================================================== */
+
+/* ---------- Verdicts (quiz, Énigmes, Vrai ou Faux) ---------- */
+.verdict {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin: 0 0 1.05rem;
+}
+.verdict-juste { color: #8FD8B8; }
+.verdict-faux { color: #E8A0A0; }
+
+/* ---------- Actions de mission (visite guidée, parcours jeunesse) ---------- */
+.mission-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .85rem;
+  margin-top: 1.25rem;
+}
+
+/* ---------- Barre de filtres collante (frise, comparateur, glossaire) ---------- */
+.barre-filtres-grande {
+  position: sticky;
+  top: 68px;
+  z-index: 40;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  justify-content: center;
+  padding: .95rem 1rem;
+  margin-bottom: var(--espace-l);
+  background: rgba(10, 10, 15, .82);
+}
+@media (max-width: 640px) {
+  .barre-filtres-grande { top: 60px; }
+}

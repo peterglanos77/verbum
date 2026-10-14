@@ -1,0 +1,223 @@
+/* ============================================================
+   VERBUM — Grande Frise chronologique interactive
+   ============================================================ */
+
+/* ---------- Barre de stats ---------- */
+.stats-frise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espace-m);
+  justify-content: center;
+  margin-bottom: var(--espace-l);
+}
+.stat-frise {
+  text-align: center;
+  padding: 1.15rem 1.95rem;
+  border: 1px solid var(--or-transparent, rgba(201, 168, 76, .28));
+  border-radius: 14px;
+  background: rgba(201, 168, 76, .05);
+}
+.stat-frise .valeur {
+  display: block;
+  font-family: var(--police-titre, 'Cinzel Decorative', serif);
+  font-size: 1.85rem;
+  color: var(--or, #C9A84C);
+  line-height: 1.15;
+}
+.stat-frise .intitule {
+  font-size: .82rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .72;
+}
+
+/* .barre-filtres-grande : voir components.css */
+
+/* ---------- Sections d'époque ---------- */
+.epoque-frise { margin-bottom: 4.25rem; }
+
+.entete-epoque {
+  position: sticky;
+  top: 132px;
+  z-index: 20;
+  display: flex;
+  align-items: baseline;
+  gap: 1.15rem;
+  padding: .85rem 1.35rem;
+  margin-bottom: 2.15rem;
+  background: linear-gradient(90deg, rgba(201, 168, 76, .16), rgba(201, 168, 76, .02));
+  border-left: 3px solid var(--or, #C9A84C);
+  border-radius: 0 12px 12px 0;
+}
+.entete-epoque h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+}
+.entete-epoque .periode {
+  font-size: .88rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .7;
+}
+
+/* ---------- Ligne de temps verticale ---------- */
+.piste-verticale {
+  position: relative;
+  padding-left: 2.65rem;
+}
+.piste-verticale::before {
+  content: "";
+  position: absolute;
+  left: .85rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg,
+    rgba(201, 168, 76, .55),
+    rgba(201, 168, 76, .18) 60%,
+    rgba(201, 168, 76, .55));
+}
+
+/* ---------- Carte événement ---------- */
+.jalon-frise {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  gap: 1.65rem;
+  align-items: center;
+  padding: 1.35rem;
+  margin-bottom: 1.85rem;
+  background: var(--bleu-nuit, #131318);
+  border: 1px solid rgba(201, 168, 76, .16);
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+.jalon-frise::before {
+  content: "";
+  position: absolute;
+  left: -2.07rem;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--or, #C9A84C);
+  box-shadow: 0 0 0 4px rgba(201, 168, 76, .18);
+  transform: translateY(-50%);
+}
+.jalon-frise:hover,
+.jalon-frise:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(201, 168, 76, .55);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .45);
+  outline: none;
+}
+.jalon-frise.masque { display: none; }
+
+.jalon-vignette {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 4 / 3;
+}
+.jalon-vignette img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .8s ease;
+}
+.jalon-frise:hover .jalon-vignette img { transform: scale(1.07); }
+.jalon-vignette .date-jalon {
+  position: absolute;
+  left: .75rem;
+  bottom: .75rem;
+  padding: .32rem .85rem;
+  background: rgba(10, 10, 15, .82);
+  border: 1px solid rgba(201, 168, 76, .5);
+  border-radius: 999px;
+  font-family: var(--police-titre, 'Cinzel Decorative', serif);
+  font-size: .88rem;
+  color: var(--or, #C9A84C);
+}
+
+.jalon-corps .categorie-jalon {
+  display: inline-block;
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: .28rem .8rem;
+  border-radius: 999px;
+  margin-bottom: .65rem;
+  border: 1px solid currentColor;
+}
+.cat-textes { color: var(--or, #C9A84C); }
+.cat-preuves { color: var(--accent-saphir, #5C8BC6); }
+.cat-traductions { color: var(--accent-emeraude, #5CB08B); }
+.cat-resistance { color: var(--accent-rubis, #C65C5C); }
+
+.jalon-corps h3 {
+  margin: 0 0 .45rem;
+  font-size: 1.22rem;
+}
+.jalon-corps .lieu-jalon {
+  font-size: .85rem;
+  opacity: .62;
+  margin-bottom: .55rem;
+}
+.jalon-corps .resume-jalon {
+  margin: 0 0 .85rem;
+  font-family: var(--police-corps-litteraire, 'EB Garamond', serif);
+  font-size: 1.04rem;
+  line-height: 1.65;
+  opacity: .88;
+}
+.jalon-corps .lien-galerie-jalon {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font-size: .88rem;
+  color: var(--or, #C9A84C);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 168, 76, .4);
+  padding-bottom: .15rem;
+}
+.jalon-corps .lien-galerie-jalon:hover { border-color: var(--or, #C9A84C); }
+
+/* ---------- Modale enrichie ---------- */
+.modale-jalon-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.45rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(201, 168, 76, .18);
+}
+.modale-jalon-nav button {
+  background: none;
+  border: 1px solid rgba(201, 168, 76, .35);
+  color: inherit;
+  padding: .55rem 1.15rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: .88rem;
+  transition: border-color .3s, background .3s;
+}
+.modale-jalon-nav button:hover {
+  border-color: var(--or, #C9A84C);
+  background: rgba(201, 168, 76, .1);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .jalon-frise {
+    grid-template-columns: 1fr;
+  }
+  .entete-epoque { top: 124px; }
+}
+@media (max-width: 560px) {
+  .piste-verticale { padding-left: 1.85rem; }
+  .piste-verticale::before { left: .55rem; }
+  .jalon-frise::before { left: -1.55rem; width: 11px; height: 11px; }
+  .stat-frise { padding: .85rem 1.15rem; }
+}

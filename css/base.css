@@ -1,0 +1,149 @@
+/* ============================================================
+   VERBUM — Fondations : reset, typographie, bases
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scrollbar-color: var(--or-sombre) var(--noir-profond);
+}
+
+body {
+  font-family: var(--font-corps);
+  font-size: var(--texte-m);
+  line-height: 1.75;
+  color: var(--blanc-parchemin);
+  background: var(--noir-profond);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body.menu-ouvert { overflow: hidden; }
+
+img, svg, video { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+ul, ol { list-style: none; }
+
+/* ---------- Barre de défilement ---------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--noir-profond); }
+::-webkit-scrollbar-thumb {
+  background: var(--degrade-or);
+  border-radius: 8px;
+  border: 2px solid var(--noir-profond);
+}
+
+/* ---------- Sélection ---------- */
+::selection { background: var(--or-sacre); color: var(--noir-profond); }
+
+/* ---------- Titres ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-titre);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--parchemin);
+  text-wrap: balance;
+}
+
+h2 { font-size: var(--texte-2xl); }
+h3 { font-family: var(--font-soustitre); font-size: var(--texte-xl); font-weight: 600; }
+h4 { font-family: var(--font-soustitre); font-size: var(--texte-l); font-weight: 600; }
+
+.texte-or {
+  background: var(--degrade-or);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Utilitaires ---------- */
+.conteneur {
+  width: min(100% - 2.5rem, var(--conteneur));
+  margin-inline: auto;
+}
+.conteneur-large {
+  width: min(100% - 2.5rem, var(--conteneur-large));
+  margin-inline: auto;
+}
+
+.section { padding-block: var(--section-y); position: relative; }
+
+.surtitre {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-ui);
+  font-size: var(--texte-xs);
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--or-sacre);
+  margin-bottom: var(--espace-s);
+}
+.surtitre::before {
+  content: "";
+  width: 2.6rem;
+  height: 1px;
+  background: var(--degrade-or);
+}
+
+.sous-titre-section {
+  font-family: var(--font-soustitre);
+  font-size: var(--texte-l);
+  font-style: italic;
+  color: var(--gris-brume);
+  max-width: 46rem;
+  margin-top: var(--espace-s);
+}
+
+/* Textes originaux */
+.texte-hebreu {
+  font-family: var(--font-hebreu);
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  font-size: 1.25rem;
+  line-height: 2;
+  color: var(--or-clair);
+}
+.texte-grec {
+  font-family: var(--font-grec);
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: var(--or-clair);
+}
+.traduction {
+  font-style: italic;
+  color: var(--blanc-parchemin);
+  border-left: 2px solid var(--or-sacre);
+  padding-left: 1.1rem;
+  margin-top: var(--espace-s);
+}
+
+/* Accessibilité */
+.sr-seule {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--or-clair);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,70 @@
+/* ==========================================================================
+   VERBUM — Vrai ou Faux : cartes de verdict
+   ========================================================================== */
+
+.bloc-verdict {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(220px, 1fr);
+  gap: var(--espace-m, 1.65rem);
+  align-items: center;
+  padding-block: 2.35rem;
+  border-top: 1px solid rgba(201, 168, 76, .22);
+}
+.bloc-verdict:first-of-type { border-top: 0; padding-top: .5rem; }
+.bloc-verdict.image-gauche { grid-template-columns: minmax(220px, 1fr) minmax(0, 1.6fr); }
+.bloc-verdict.image-gauche .verdict-image { order: -1; }
+
+.verdict-numero {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--or-doux, #D9BC75);
+  letter-spacing: .18em;
+  margin-bottom: .45rem;
+}
+
+.verdict-citation {
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+  font-style: italic; font-weight: 600;
+  line-height: 1.3;
+  color: var(--texte-clair, #E8E0D0);
+  margin: 0 0 1.05rem;
+  max-width: 38rem;
+}
+
+/* Pastilles de verdict */
+.verdict {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: .78rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  padding: .48rem 1.05rem;
+  border-radius: 999px;
+  margin-bottom: 1.05rem;
+}
+.verdict-faux   { background: rgba(178, 58, 58, .16);  color: #E58B8B; border: 1px solid rgba(200, 90, 90, .55); }
+.verdict-nuance { background: rgba(201, 168, 76, .14); color: var(--or-doux, #D9BC75); border: 1px solid rgba(201, 168, 76, .55); }
+.verdict-vrai   { background: rgba(58, 138, 92, .16);  color: #8BD4A6; border: 1px solid rgba(90, 180, 130, .55); }
+
+.verdict-preuve {
+  color: rgba(232, 224, 208, .88);
+  font-size: 1.01rem; line-height: 1.78;
+  margin: 0; max-width: 40rem;
+}
+.verdict-preuve strong { color: var(--or-pale, #E8D9A8); }
+.verdict-preuve a { color: var(--or-doux, #D9BC75); }
+
+.verdict-image { position: relative; }
+.verdict-image img {
+  width: 100%; height: auto;
+  border-radius: var(--rayon-m, 12px);
+  border: 1px solid rgba(201, 168, 76, .38);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, .42);
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .bloc-verdict,
+  .bloc-verdict.image-gauche { grid-template-columns: 1fr; }
+  .bloc-verdict.image-gauche .verdict-image { order: 0; }
+}

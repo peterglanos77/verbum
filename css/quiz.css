@@ -1,0 +1,123 @@
+/* ============================================================
+   VERBUM — Le Défi de la Transmission (quiz)
+   ============================================================ */
+.quiz-cadre {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+.quiz-barre {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(201, 168, 76, .18);
+  overflow: hidden;
+  margin-bottom: .85rem;
+}
+.quiz-barre .jauge {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--or, #C9A84C), #E8CE8E);
+  border-radius: 999px;
+  transition: width .5s ease;
+}
+.quiz-progression-texte {
+  font-size: .88rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  opacity: .72;
+  margin-bottom: 1.85rem;
+}
+.quiz-entete h3 {
+  font-size: clamp(1.35rem, 3.2vw, 1.95rem);
+  margin: .45rem 0 1.65rem;
+  line-height: 1.35;
+}
+.quiz-options {
+  display: grid;
+  gap: .85rem;
+}
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 1.05rem;
+  width: 100%;
+  padding: 1.05rem 1.35rem;
+  background: var(--bleu-nuit, #131318);
+  border: 1px solid rgba(201, 168, 76, .22);
+  border-radius: 14px;
+  color: inherit;
+  font-size: 1.02rem;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color .3s, transform .3s, background .3s;
+}
+.quiz-option:hover:not(:disabled) {
+  border-color: rgba(201, 168, 76, .6);
+  transform: translateX(6px);
+}
+.quiz-option .lettre {
+  flex: 0 0 auto;
+  width: 2.15rem;
+  height: 2.15rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(201, 168, 76, .5);
+  border-radius: 50%;
+  font-family: var(--police-titre, 'Cinzel Decorative', serif);
+  color: var(--or, #C9A84C);
+}
+.quiz-option.juste {
+  border-color: #5CB08B;
+  background: rgba(92, 176, 139, .12);
+}
+.quiz-option.juste .lettre { border-color: #5CB08B; color: #5CB08B; }
+.quiz-option.faux {
+  border-color: #C65C5C;
+  background: rgba(198, 92, 92, .1);
+}
+.quiz-option.faux .lettre { border-color: #C65C5C; color: #C65C5C; }
+.quiz-option:disabled { cursor: default; opacity: .92; }
+
+.quiz-feedback {
+  margin-top: 1.65rem;
+  padding: 1.35rem 1.55rem;
+  border-left: 3px solid var(--or, #C9A84C);
+  background: rgba(201, 168, 76, .07);
+  border-radius: 0 12px 12px 0;
+}
+.quiz-feedback .verdict {
+  font-family: var(--police-corps-litteraire, 'EB Garamond', serif);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin: 0 0 1.05rem;
+}
+/* verdicts : voir components.css */
+.quiz-feedback .quiz-suivant { margin-top: 1.15rem; }
+
+/* ---------- Parcours jeunesse ---------- */
+.mission-carte { border-color: rgba(201, 168, 76, .3); }
+/* .mission-actions : voir components.css */
+.missions-barre {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.45rem;
+}
+.missions-barre .jauge-fond {
+  flex: 1 1 240px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(201, 168, 76, .18);
+  overflow: hidden;
+}
+.missions-barre .jauge-fond > div {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--or, #C9A84C), #E8CE8E);
+  border-radius: 999px;
+  transition: width .5s ease;
+}
+#missions-compteur {
+  font-family: var(--police-titre, 'Cinzel Decorative', serif);
+  color: var(--or, #C9A84C);
+}
